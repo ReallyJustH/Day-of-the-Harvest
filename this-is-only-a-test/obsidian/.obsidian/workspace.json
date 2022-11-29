@@ -1,0 +1,136 @@
+{
+  "main": {
+    "id": "cc6336c5173b2fcd",
+    "type": "split",
+    "children": [
+      {
+        "id": "f04153d1513821f6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "635b9907001aab51",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ddb48a61662c00fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4ae89c5269b03a0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1248412df86867f8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cf31501d00353611",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0426daa46a58cbe4",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "92597ea9488944e8",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e505bfa161b4050",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6647ec16cf703dc4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "94dfab92d803f9fc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e12749a5e850323a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "04546afaf898ad5d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "1248412df86867f8",
+  "lastOpenFiles": [
+    "Untitled/Bowling.md",
+    "Untitled/2022-11-16.md"
+  ]
+}

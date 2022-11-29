@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 41: expecting name after dot.
+    xalign .50
+            ^
+
+File "game/script.rpy", line 42: expecting name after dot.
+    yalign .50
+            ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Tue Nov 29 17:50:43 2022
