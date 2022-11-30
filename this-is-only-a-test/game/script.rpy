@@ -67,6 +67,7 @@ label start:
         xalign .50
         yalign .50
 
+    voice "audio/Recording.mp3"
     "Note" "This comes with a few new facts of life that you must understand."
 
     "Note" "I felt it was only polite to give you a proper chance at survival, so follow my instructions closely."

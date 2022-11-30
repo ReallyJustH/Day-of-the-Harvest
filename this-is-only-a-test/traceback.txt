@@ -1,17 +1,17 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Executing ATL code at game/script.rpy:43
-  File "game/script.rpy", line 45, in script
-    "Note""I am sorry to leave you in this situation. In time, you will appreciate the gift you recieved tonight."
+While running game code:
+  File "game/script.rpy", line 71, in script
+    "Note" "This comes with a few new facts of life that you must understand."
   File "renpy/common/00library.rpy", line 303, in say
     who(what, interact=interact, *args, **kwargs)
-TypeError: 'float' object is not iterable
+OSError: Couldn't find file 'Recording.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 45, in script
-    "Note""I am sorry to leave you in this situation. In time, you will appreciate the gift you recieved tonight."
+  File "game/script.rpy", line 71, in script
+    "Note" "This comes with a few new facts of life that you must understand."
   File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1371, in say
@@ -28,40 +28,24 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 495, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 148, in renpy.display.accelerator.transform_render
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 926, in update_state
-    fr = self.execute(self, self.st, self.at)
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\atl.py", line 596, in execute
-    action, arg, pause = block.execute(trans, timebase, self.atl_state, events)
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\atl.py", line 839, in execute
-    action, arg, pause = stmt.execute(trans, target - start, child_state, events)
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\atl.py", line 1227, in execute
-    setattr(newts, k, v)
-  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 319, in set_size
-    self.xysize = tuple(int(x) if isinstance(x, float) else x for x in value)
-TypeError: 'float' object is not iterable
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 4103, in interact_core
+    renpy.audio.audio.periodic()
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1166, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1144, in periodic_thread_main
+    periodic_pass()
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1086, in periodic_pass
+    c.periodic()
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\audio\audio.py", line 517, in periodic
+    topf = load(filename)
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\audio\audio.py", line 70, in load
+    rv = renpy.loader.load(fn)
+  File "C:\Users\H.Rose\Downloads\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'Recording.mp3'.
 
 Windows-10-10.0.19042 AMD64
 Ren'Py 8.0.3.22090809
 this is only a test 1.0
-Tue Nov 29 17:51:54 2022
+Tue Nov 29 19:22:11 2022
