@@ -4,6 +4,8 @@
 # name of the character.
 
 define v = Character("V")
+image v1 = im.FactorScale("V placeholder 1.png", .80)
+image aeri = im.FactorScale("Ae-Ri placeholder 1.png", .80)
 
 
 # The game starts here.
@@ -98,10 +100,23 @@ label start:
 
     v "I tuck the note back into my pocket to stop it getting any wetter, then start walking in the direction I woke up facing."
 
+    #TODO
+    
     v "Bits in parenthesis are for later when we have actual assets to show changes in what is happening, such as speaking vs internal monologue, or reading the note."
 
+    #RANDOM ADDITION FOR SCREENSHOT
 
+    hide note
 
+    show v1:
+        xalign 1.00
+        yalign 0.0
+
+    show aeri:
+        xalign 0.0
+        yalign 0.0
+
+    "Ae-RI" "I am sorry to leave you in this situation. In time, you will appreciate the gift you recieved tonight."
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
