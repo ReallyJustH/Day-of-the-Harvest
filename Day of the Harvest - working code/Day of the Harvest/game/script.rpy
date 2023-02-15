@@ -2,11 +2,13 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
+# The persistent variable saves as a variable in the game. Currently 
 
 define e = Character("CEO")
+define persistent.gameDone = None
 
 
-# The game starts here.
+# The game starts here. This block of text plays before the game starts to provide a content warning to the user of mature content 
 label splashscreen:
     scene black
     with Pause(1)
@@ -17,11 +19,12 @@ label splashscreen:
     hide text with dissolve
     with Pause(1)
 
-return 
+return
+
+#this is when you press start on the main menu. It'll set assets such as characters, backgrounds, UI elements. 
 
 label start:
 
-    
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -33,12 +36,14 @@ label start:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
+    # A score counter is changed by the players based on the choices they make. Based on the amount of points 
+    # the player will experience differnt stories 
 
     image eileen = im.Scale("eileen_happy.png", 1000, 1000)
     show eileen 
     $ score_counter = 0
 
-    # These display lines of dialogue.
+    # Questionaire starts here. 
 
     e "Before we continue, please answer the questionaire. This will help us know whether you can survive in this world."
     e "Your final score will determine where you will find yourself in society."
@@ -181,7 +186,8 @@ label start:
         "I don't say anything at all.":
             $ score_counter += 1
 
-    
+    #first choice with options. Everytime you choose a different option we use flags and labels to show where we want to jump into the story
+    #this will be the default way of jumping between stories, and choices that have different text. 
     e "Your childhood toy, Bingo. Head of a soft teddy bear with a body made of a blanket. White fluff turned beige by time. Rip in the corner. Old, but you remember him now. "
     menu:
 
@@ -279,7 +285,7 @@ label start:
         jump Questionaire_over
 
 
-    # all bingo routes lead to questionaire end 
+    # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag
     label Questionaire_over:
         e "Your score is [score_counter]"
         if score_counter <= 0:
@@ -288,7 +294,7 @@ label start:
             jump cog_story
         if score_counter < 17:
             jump business_story
-        if score_counter >= 17:
+        if score_counter >= 16 and persistent.gameDone:
             jump ceo_story
 
 
@@ -570,6 +576,12 @@ label start:
     label the_end:
 
     e " This is the end of the game."
+
+    if persistent.gameDone:
+    
+        e "Alternate path has been unlocked."
+        
+    $ persistent.gameDone = True
 
     # This ends the game.
 
