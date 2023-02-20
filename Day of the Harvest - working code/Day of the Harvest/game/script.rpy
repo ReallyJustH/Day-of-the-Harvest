@@ -381,7 +381,7 @@ label start:
 
 
 
-    label chopping_block_path:
+    label sacrafice_block_path:
         e "The line is red. Going down. 
         You try to control your breathing.
         The only thing worse than bad numbers is being caught lying.
@@ -422,7 +422,7 @@ label start:
         jump the_end
 
 
-    label sacrafice_block_path:
+    label chopping_block_path:
         e "The line goes up. Green. You cough out Good! they are good. P-profit!
         The boss's many needle teeth clink in his vast mouth. From the upper jaw all the way down to the collar of his suit is a series of fused needles and metal thorns that tap together one after another. "
         e "Tip-tap, over and over. Click-clack, so much noise. 
