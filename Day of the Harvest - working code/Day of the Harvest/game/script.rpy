@@ -34,13 +34,13 @@ label start:
     with fade
 
     # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
+    # replace it by adding a file named "CEO.png" to the images
     # directory.
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
 
-    image eileen = im.Scale("eileen_happy.png", 1000, 1000)
-    show eileen 
+    image CEO = im.Scale("CEO.png", 1000, 1000)
+    show CEO 
     $ score_counter = 0
 
     # Questionaire starts here. 
@@ -285,7 +285,8 @@ label start:
         jump Questionaire_over
 
 
-    # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag
+    # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag. 
+    # Persistent flag is triggered when the game ends and the appopriate text will play when finished. 
     label Questionaire_over:
         e "Your score is [score_counter]"
         if score_counter <= 0:
