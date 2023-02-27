@@ -39,8 +39,8 @@ label start:
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
 
-    image CEO = im.Scale("CEO.png", 1000, 1000)
-    show CEO 
+    image questionaire = im.Scale("quesstionaire.png", 1000, 1000)
+    show questionaire 
     $ score_counter = 0
 
     # Questionaire starts here. 
