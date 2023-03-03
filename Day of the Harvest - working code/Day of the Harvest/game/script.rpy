@@ -583,6 +583,6 @@ label start:
         
     $ persistent.gameDone = True
 
-    # This ends the game.
+    # This ends the game. 
 
     return
