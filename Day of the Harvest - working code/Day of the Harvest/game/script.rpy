@@ -34,13 +34,13 @@ label start:
     with fade
 
     # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
+    # replace it by adding a file named "CEO.png" to the images
     # directory.
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
 
-    image eileen = im.Scale("eileen_happy.png", 1000, 1000)
-    show eileen 
+    image questionaire = im.Scale("quesstionaire.png", 1000, 1000)
+    show questionaire 
     $ score_counter = 0
 
     # Questionaire starts here. 
@@ -285,7 +285,8 @@ label start:
         jump Questionaire_over
 
 
-    # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag
+    # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag. 
+    # Persistent flag is triggered when the game ends and the appopriate text will play when finished. 
     label Questionaire_over:
         e "Your score is [score_counter]"
         if score_counter <= 0:
@@ -381,7 +382,7 @@ label start:
 
 
 
-    label chopping_block_path:
+    label sacrafice_block_path:
         e "The line is red. Going down. 
         You try to control your breathing.
         The only thing worse than bad numbers is being caught lying.
@@ -422,7 +423,7 @@ label start:
         jump the_end
 
 
-    label sacrafice_block_path:
+    label chopping_block_path:
         e "The line goes up. Green. You cough out Good! they are good. P-profit!
         The boss's many needle teeth clink in his vast mouth. From the upper jaw all the way down to the collar of his suit is a series of fused needles and metal thorns that tap together one after another. "
         e "Tip-tap, over and over. Click-clack, so much noise. 
