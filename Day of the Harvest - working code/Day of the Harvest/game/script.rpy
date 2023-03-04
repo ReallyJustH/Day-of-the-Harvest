@@ -300,55 +300,80 @@ label start:
 
 
 
-    #waste story 
+    #Put stuff for waste story here 
     label waste_story:
-        e "The sky boils and coughs as smoke chokes the sun. You think you saw it once. "
-        e" Your body's rent is due. You were born with it, but if you want to keep it from getting a superplague then you need to make an offering to the executives. Rent is up, always up. 
-        The market demands sacrifice if it is to thrive. "
+        #put text here for the story until waste road choice
+        
 
-        e "A man in a collared shirt is staring at you."
+            e "Right?"
+            menu: 
+                e "Give up":
+                    jump waste_giveUp
 
-        e "Shit. He saw you. Your filthy body, covered in mods that you were told would help you get a good job but never seemed to. Infected, sickly. He looks terrified, he's covered in sweat, but he's still coming closer."
-        e "The great engine of progress has gotten more and more quiet these past few days. Sky red and black haze has faded, but with that visibility and peace comes more risk."
-        e" It's the day of the harvest, and you're unemployed.
-        Bad day to be outside."
+                e "Continue on":
+                    jump waste_continueOn
+    #enter text here for waste_give up path here.
+    label waste_giveUp:
 
-        e "The man is running now. Stop! Listen to me!"
-        e"You run faster. You can hear the thick, congested air whistle through one of the holes in your wrist from a botched modification surgery. All around you, signs with WORK and EMBRACE DICIPLINE blur together. "
+        jump the_end
 
-        e "You trip over a discarded bottle.
-        The man's hands are on you within seconds. He wraps his arm around your throat and whispers,I'm so sorry just before the needle plunges into your neck. You black out. "
 
-        e "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run. "
-        e" The people are sobbing. Men, women, children. The few who aren't crying are either asleep or barely choking down their whimpers. 
-        You all know exactly what's coming. You've seen the televised events."
 
-        e "The Harvest."
+    label waste_continueOn:
 
-        e "The men in collared shirts drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
-        e " But you know what's coming. You forgot your rent, just look at you, there's no chance that putting on a show now will impress them.
-        Even with the sky blocked by smog, your eyes take a few seconds to adjust."
 
-        e "The market requires blood. They muttered."
+        jump the_end
 
-        e "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
-        e" Lines of black trucks pass between a massive wall of skyscrapers that overlook this place. How many have they brought for this harvest? 
-        At its center is a massive, incomprehensible machine. Blackened metal, enormous smokestacks, tubes leading nowhere and a dull red glow emanating from it."
-        e" Sharp spikes and needles spin across its surface in lazy orbits, chains made of spindles. Each booming sputter of the engine of progress as it struggles to run sounds like the beat of a vast heart. "
-        e" The man marches you to the lip of the pit and kicks the back of your leg."
-        e" You barely feel it as you fall to your knees. Your eyes are locked on the great engine.
-        A transaction must occur."
-        e" You feel a hand press your head into place, your throat now right against the rim of the pit."
+        
 
-        e "No need to scream now. You know what's coming."
 
-        e "You feel the blade glide into your throat. 
-        The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
-        e "So much red, moving so quickly down the wall.
-        The engine pulses in time with your heart.
-        Even as it slows."
-        e "At least you served some purpose before you died.
-        The market grows stronger."
+        # e "The sky boils and coughs as smoke chokes the sun. You think you saw it once. "
+        # e" Your body's rent is due. You were born with it, but if you want to keep it from getting a superplague then you need to make an offering to the executives. Rent is up, always up. 
+        # The market demands sacrifice if it is to thrive. "
+
+        # e "A man in a collared shirt is staring at you."
+
+        # e "Shit. He saw you. Your filthy body, covered in mods that you were told would help you get a good job but never seemed to. Infected, sickly. He looks terrified, he's covered in sweat, but he's still coming closer."
+        # e "The great engine of progress has gotten more and more quiet these past few days. Sky red and black haze has faded, but with that visibility and peace comes more risk."
+        # e" It's the day of the harvest, and you're unemployed.
+        # Bad day to be outside."
+
+        # e "The man is running now. Stop! Listen to me!"
+        # e"You run faster. You can hear the thick, congested air whistle through one of the holes in your wrist from a botched modification surgery. All around you, signs with WORK and EMBRACE DICIPLINE blur together. "
+
+        # e "You trip over a discarded bottle.
+        # The man's hands are on you within seconds. He wraps his arm around your throat and whispers,I'm so sorry just before the needle plunges into your neck. You black out. "
+
+        # e "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run. "
+        # e" The people are sobbing. Men, women, children. The few who aren't crying are either asleep or barely choking down their whimpers. 
+        # You all know exactly what's coming. You've seen the televised events."
+
+        # e "The Harvest."
+
+        # e "The men in collared shirts drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
+        # e " But you know what's coming. You forgot your rent, just look at you, there's no chance that putting on a show now will impress them.
+        # Even with the sky blocked by smog, your eyes take a few seconds to adjust."
+
+        # e "The market requires blood. They muttered."
+
+        # e "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
+        # e" Lines of black trucks pass between a massive wall of skyscrapers that overlook this place. How many have they brought for this harvest? 
+        # At its center is a massive, incomprehensible machine. Blackened metal, enormous smokestacks, tubes leading nowhere and a dull red glow emanating from it."
+        # e" Sharp spikes and needles spin across its surface in lazy orbits, chains made of spindles. Each booming sputter of the engine of progress as it struggles to run sounds like the beat of a vast heart. "
+        # e" The man marches you to the lip of the pit and kicks the back of your leg."
+        # e" You barely feel it as you fall to your knees. Your eyes are locked on the great engine.
+        # A transaction must occur."
+        # e" You feel a hand press your head into place, your throat now right against the rim of the pit."
+
+        # e "No need to scream now. You know what's coming."
+
+        # e "You feel the blade glide into your throat. 
+        # The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
+        # e "So much red, moving so quickly down the wall.
+        # The engine pulses in time with your heart.
+        # Even as it slows."
+        # e "At least you served some purpose before you died.
+        # The market grows stronger."
 
         jump the_end
 
