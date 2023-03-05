@@ -7,6 +7,12 @@
 define e = Character("CEO")
 define persistent.gameDone = None
 
+#cog story path variables
+default refund = False
+default system = False
+default cannot = False
+default haveTo = False
+
 
 # The game starts here. This block of text plays before the game starts to provide a content warning to the user of mature content 
 label splashscreen:
@@ -401,17 +407,47 @@ label start:
         The beating heart of the world, the transaction of value. But you are no exec, the numbers don't make sense."
         e "You choke on your words."
         "Well, whelp, how are the numbers?"
+        woman "“I can’t do this anymore…” The woman begins to sob."
         
         menu:
-                "Good.":
-
-                    jump chopping_block_path
+                "Give her a refund.":
+                    $ refund = True
                 
-                "Bad.":
+                "Follow the system.":
+                    $ system = True
 
-                    jump sacrafice_block_path
+        if phone_call:
+            #put text for phone call True 
 
         
+        if system: 
+            #put text for if system is true 
+
+        #continue text here
+
+        if phone_call:
+        #put text for phone call True 
+
+        
+        if system: 
+            #put text for if system is true 
+
+        #continue text here
+
+        menu:
+            "You can't":
+                $ cannot = True
+
+            "You have to":
+                $ haveTo = True
+
+        if cannot:
+
+
+        if haveTo:
+
+
+        #text continues here 
 
 
 
@@ -492,17 +528,21 @@ label start:
         e "His hooked fingers reach over to you, whirring as they writhe through the air before suddenly becoming still as they find your suit. "
         e" The CEO has long since forsaken the need for a mouth, and speaks directly into your mind as the raised veins on his massive eye throb and expand.
         Your harvest this year was more than satisfactory. The great transaction continues."
+
+        
+        e "You know, Anders, you might have what it takes to be an exec after all. What do you say?" (Boss)
+
         
         menu:
-                "You cry joyfully.":
+                "I'd be honored":
 
-                    jump joy_path
+                    jump honored_path
                 
-                "You feel regret creep into your heart.":
+                "You feel regret creep into your heart":
 
                     jump regret_path
 
-    label joy_path:
+    label honored_path:
     e "The CEO must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh.
     You know, Anders, you might have what it takes to be an exec after all. What do you say? "
 
@@ -615,7 +655,7 @@ label start:
 
     if persistent.gameDone:
     
-        e "Alternate path has been unlocked."
+        e "Alternate path may have been unlocked."
         
     $ persistent.gameDone = True
 
