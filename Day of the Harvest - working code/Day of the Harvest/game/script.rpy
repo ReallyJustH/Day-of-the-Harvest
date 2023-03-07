@@ -8,6 +8,17 @@ define e = Character("questionaire")
 define n = Character("Narrator")
 define c = Character("Collector")
 define tc = Character("The Collectors")
+define cogM = Character("Cog(Male)")
+define cogF = Character("Cog(female)")
+define fm = Character("Floor Manager")
+define craig = Character("Craig")
+define hm = Character("homeless man")
+define meli = Character("Melissa (Wife)")
+define ceo = Character("CEO")
+
+
+
+
 define persistent.gameDone = None
 
 #cog story path variables
@@ -623,21 +634,30 @@ label start:
 
         if phone_call:
             #put text for phone call True 
+            "block text for test"
 
         
         if system: 
             #put text for if system is true 
+            "block text for test"
+
 
         #continue text here
 
         if phone_call:
             #put text for phone call True 
+            "block text for test"
+
 
         
         if system: 
-            #put text for if system is true 
+            #put text for if system is true
+            "block text for test"
+ 
 
         #continue text here
+            "block text for test"
+
 
         menu:
             "You can't":
@@ -647,9 +667,11 @@ label start:
                 $ haveTo = True
 
         if cannot:
+            "block text for test"
 
 
         if haveTo:
+            "block text for test"
 
 
         #text continues here 
