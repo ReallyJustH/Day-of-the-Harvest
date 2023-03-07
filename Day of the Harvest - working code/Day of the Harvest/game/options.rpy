@@ -29,7 +29,11 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Game is developed by the RIT HCD Capstone Team.\n
+Original story created by Jared Murphy \n
+Programming and logic created by Kensey Shida\n
+Edits for alternate endings created by Jared Murphy, Scarlet Meyer, and Nick Lande \n
+Assets collected from Jared Murphy and gathered from royalty free sources (pixabay etc)
 """)
 
 
