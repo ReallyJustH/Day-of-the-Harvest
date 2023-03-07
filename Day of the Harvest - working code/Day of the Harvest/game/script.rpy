@@ -4,7 +4,7 @@
 # name of the character.
 # The persistent variable saves as a variable in the game. Currently 
 
-define e = Character("CEO")
+define e = Character("questionaire")
 define n = Character("Narrator")
 define c = Character("Collector")
 define tc = Character("The Collectors")
@@ -39,6 +39,10 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     image bg room = im.Scale("room.jpg", 2000, 1200)
+    image bg darkalley = im.Scale("darkalley.jpg", 2000, 1200)
+    image bg streets = im.Scale("streets.jpg", 2000, 1200)
+    image bg office = im.Scale("office.jpg", 2000, 1200)
+    image bg room = im.Scale("room.jpg", 2000, 1200)
     scene bg room
     with fade
 
@@ -48,7 +52,7 @@ label start:
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
 
-    image questionaire = im.Scale("quesstionaire.png", 1000, 1000)
+    image questionaire = im.Scale("questionaire.png", 1000, 1000)
     show questionaire 
     $ score_counter = 0
 
@@ -317,8 +321,13 @@ label start:
         n "Your family is gone. Taken. You are alone."
         
         n "You are waking up. Just another day."
+
+        
         
         #Introduce alleyway asset. Add the homeless man/woman asset based on the chosen gender variable
+        scene bg alleyway
+        with fade
+
         n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
         
         n "What’s left of them, anyway. What isn’t entirely broken from decades of labor."
@@ -375,8 +384,10 @@ label start:
         n "So here you are in an alleyway you’d probably have to leave soon. Here you are having to scrounge for scraps. Here you are. What was the point?"
     
         n "There wasn’t one. They were sure to beat that into your skull. Only now is it just getting through."
-    
+
         #Adjust scene to streets asset
+        scene bg streets
+        with fade
     
         n "You look out into the trash filled streets as what little color you had left leaves your body. Your body died long ago. Your mind is coming with it."
     
@@ -399,7 +410,8 @@ label start:
         n "After a few stretches of your tired muscles (or lack thereof), you walk out of your temporary home. No use just thinking about hope. You had to get food."
     
         #Adjust scene to streets asset
-    
+        scene bg streets
+        with fade
         n "The streets were just as dark as the skyscrapers and sky – nothing new. Nor were the neon signs you long since avoided glancing at. Nor were the more appealing colors of trash that litter the cracked sidewalks."
     
         n "Once again aside from these meager surroundings, you were alone. Anyone employed surely wouldn’t risk their safety to walk or even drive. Why would they when the subways take a direct line to their designated homes and workplace?"
