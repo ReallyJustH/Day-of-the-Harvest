@@ -1,0 +1,32 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 20, in script
+    return with fade
+SyntaxError: invalid syntax (game/script.rpy, line 20)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/script.rpy", line 20, in script
+    return with fade
+  File "C:\Users\Yuzo\Desktop\New folder (2)\renpy-7.5.3-sdk\renpy\ast.py", line 1768, in execute
+    renpy.store._return = renpy.python.py_eval(self.expression)
+  File "C:\Users\Yuzo\Desktop\New folder (2)\renpy-7.5.3-sdk\renpy\python.py", line 1090, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\Yuzo\Desktop\New folder (2)\renpy-7.5.3-sdk\renpy\python.py", line 1027, in py_compile
+    raise e
+  File "C:\Users\Yuzo\Desktop\New folder (2)\renpy-7.5.3-sdk\renpy\python.py", line 979, in py_compile
+    raise orig_e
+  File "C:\Users\Yuzo\Desktop\New folder (2)\renpy-7.5.3-sdk\renpy\python.py", line 972, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 20)
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.0.3.22090809
+Day of the Harvest 1.0
+Fri Feb  3 23:04:41 2023
