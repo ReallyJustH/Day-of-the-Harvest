@@ -307,15 +307,13 @@ label start:
 #Put stuff for waste story here 
     label waste_story:
         #put text here for the story until waste road choice
-        
+        e "Right?"
+        menu: 
+            e "Give up":
+                jump waste_giveUp
 
-            e "Right?"
-            menu: 
-                e "Give up":
-                    jump waste_giveUp
-
-                e "Continue on":
-                    jump waste_continueOn
+            e "Continue on":
+                jump waste_continueOn
     #enter text here for waste_give up path here.
     label waste_giveUp:
 
@@ -326,12 +324,11 @@ label start:
     label waste_continueOn:
         #menu option to share the sandwich 
         e "Do you share the sandwich?"
-            menu: 
-                e "Yes":
-                    jump waste_shareFood
-
-                e "No":
-                    jump waste_dontShareFood
+        menu: 
+            e "Yes":
+                jump waste_shareFood
+            e "No":
+                jump waste_dontShareFood
 
     label waste_shareFood:
         #enter text for share food path 
