@@ -5,6 +5,9 @@
 # The persistent variable saves as a variable in the game. Currently 
 
 define e = Character("CEO")
+define n = Character("Narrator")
+define c = Character("Collector")
+define tc = Character("The Collectors")
 define persistent.gameDone = None
 
 #cog story path variables
@@ -307,87 +310,280 @@ label start:
 #Put stuff for waste story here 
     label waste_story:
         #put text here for the story until waste road choice
-        e "Right?"
+        n "You are homeless."
+        
+        n "You have been for weeks…or was it months…years? It’s hard to tell now."
+        
+        n "Your family is gone. Taken. You are alone."
+        
+        n "You are waking up. Just another day."
+        
+        #Introduce alleyway asset. Add the homeless man/woman asset based on the chosen gender variable
+        n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
+        
+        n "What’s left of them, anyway. What isn’t entirely broken from decades of labor."
+        
+        n "The skyscrapers that surround the alleyway in which you slept in aren’t much better. They’re only a slight tint brighter than what was above, and so tall as to reach nearly as high."
+        
+        n "It’s a miracle you even found this place. It's a miracle alleyways still exist now that you think about it."
+        
+        n "You slept more than usual, you believe. You knew you couldn’t afford to, but the desire to doze overcame any other thought. Luck overcame there too."
+        
+        n "After all, it’s awfully hard to rest most nights to avoid being taken for The Harvest."
+        
+        n "You think it’s soon, at least. The ‘engine of progress’ has gotten quieter. Not like that matters to you any more."
+        
+        n "The surrounding buildings churned less and less and temporarily got rid of the racket that pounded in your ears."
+        
+        n "In that way, today actually started off pretty well all things considered."
+        
+        n "A cough of blood escapes your feeble form."
+        
+        n "All things considered…"
+        
+        n "Still…you can’t just give up hope. These better circumstances mean there’s something to keep going for…"
+        
+        n "Right?"
+
         menu: 
             "Give up":
                 jump waste_giveUp
 
             "Continue on":
                 jump waste_continueOn
-    #enter text here for waste_give up path here.
+                    
     label waste_giveUp:
-
+    
+        n "The more you think about it, the less reason there is to keep hope."
+    
+        n "What good did it give you? What good did it give your family? What good did it give to everything you cared for?"
+    
+        n "You hoped too much."
+    
+        n "That’s why it’s all gone."
+    
+        n "It always ends up that way sooner or later."
+    
+        n "The only question is the agency of it: do you give it up or does the world take it?"
+    
+        n "For you it was the latter."
+    
+        n "As often as they told you to get them out of your mind, as often as they told you that they meant nothing, your conscience couldn’t allow it. You hoped you would thrive despite that."
+    
+        n "They didn’t allow it."
+    
+        n "So here you are in an alleyway you’d probably have to leave soon. Here you are having to scrounge for scraps. Here you are. What was the point?"
+    
+        n "There wasn’t one. They were sure to beat that into your skull. Only now is it just getting through."
+    
+        #Adjust scene to streets asset
+    
+        n "You look out into the trash filled streets as what little color you had left leaves your body. Your body died long ago. Your mind is coming with it."
+    
+        n "In those brief moments, you continue to wonder…what was the point of the Harvest?"
+    
+        n "Those brief moments before you notice someone standing across from you on the street."
+    
+        #Add/apply giveUp variable to be used in the waste_end section
+    
         jump waste_end
 
 
 
     label waste_continueOn:
+    
+        n "Right. You didn’t come this far just to give up now. To just break after all these years."
+    
+        n "What would your family have thought if you did that? No, you have to keep going."
+    
+        n "After a few stretches of your tired muscles (or lack thereof), you walk out of your temporary home. No use just thinking about hope. You had to get food."
+    
+        #Adjust scene to streets asset
+    
+        n "The streets were just as dark as the skyscrapers and sky – nothing new. Nor were the neon signs you long since avoided glancing at. Nor were the more appealing colors of trash that litter the cracked sidewalks."
+    
+        n "Once again aside from these meager surroundings, you were alone. Anyone employed surely wouldn’t risk their safety to walk or even drive. Why would they when the subways take a direct line to their designated homes and workplace?"
+    
+        n "Any other hobos around are sure to hide out in their own filth holes to stay out of sight. Either that or stay on the move hunting in trash piles further along the street. Anything to not be caught with ease."
+    
+        n "Your legs buckle for a moment as you walk out and bid your temporary quarters farewell. Well, after you make sure your locket is still with you."
+    
+        n "Your last physical trace of your family aside from your own biological components."
+    
+        n "One more cough of blood and you’re off."
+    
+        #Cut to black
+    
+        #Maybe adjust this from narrator to blank
+        n "Hours later…"
+    
+        #Cut back to streets asset, littered with trash assets, and the main character homeless man/woman asset
+    
+        n "Nothing. Still nothing. No matter how much you scrounge for food today, the trash piles seemed to house no viable sustenance."
+    
+        n "The key word was viable. There was no way you were taking food from the few occasional hobos you saw as you passed by. The ones who already found some in piles they searched."
+    
+        n "You knew life was hard enough to resort to such methods…even if the executives probably would’ve encouraged it."
+    
+        n "A shudder courses through your body and even into your cybernetics at just the thought of it. Best not to think about that."
+    
+        n "You begin looking through another pile, dirt and grime continuing to latch onto your hands. And then…you see it."
+    
+        n "A sandwich! A nearly whole cheese sandwich in a plastic bag!"
+    
+        n "Briefly wiping your hands and mouth to have some sort of cleanliness you tore open the bag, and held the carb filled deliciousness up in the air. Your jaws open wide, ready to snap shut in an instant…"
+    
+        n "…that is until you see her."
+    
+        #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
+    
+        n "Another homeless and unemployed just like you. Unlike the others of today though, she stares back. You pause to look her over."
+    
+        n "She’s even more gaunt than you. She’s missing an entire arm. She’s desperate, even without words."
+    
         #menu option to share the sandwich 
-        e "Do you share the sandwich?"
+        n "Do you share the sandwich?"
+    
         menu: 
-            "Yes":
-                jump waste_shareFood
-            "No":
-                jump waste_dontShareFood
+                "Yes":
+                    jump waste_shareFood
+
+                "No":
+                    jump waste_dontShareFood
 
     label waste_shareFood:
-        #enter text for share food path 
+    
+        #Add/apply helpOthers variable
+        
+        n "You split the sandwich in two before handing one half to her. After nearly a minute, she reaches her remaining arm out and holds it, taking a bite."
+        
+        #Adjust scene to get rid of homeless woman asset
+        
+        n "She walks away without a word spoken. Despite that, you smile."
+        
+        n "Because you saw her smile."
+        
+        n "This is hope."
+        
+        n "You lie down using the pile as support. Today was a good day."
+        
+        n "It lasts for quite a while…but then reality sets in. You finally hear other homeless people’s clatter."
+        
+        n "You lift your head up from the pile."
+        
         jump waste_end
 
     label waste_dontShareFood:
-        #enter text for dont share food path 
+        
+        n "As much as it pains you…as much as you hate yourself for it…as much as it continues to remind you of those higher above you…"
+        
+        n "You can’t do it."
+        
+        n "You give her a somber expression before looking away and taking a bite."
+        
+        #Adjust scene to get rid of homeless woman asset
+        
+        n "By the time you finished eating and you looked back, she was gone."
+        
+        n "It’s a mistake. You know it is."
+        
+        n "You huddle your body next to the pile. You cry."
+        
+        n "You don’t know for how long. Nothing new."
+        
+        n "By the time you look up, you see them."
+        
         jump waste_end
 
     label waste_end:
         #default ending for all routes regarding "the waste path"
 
-        e "The sky boils and coughs as smoke chokes the sun. You think you saw it once. "
-        e" Your body's rent is due. You were born with it, but if you want to keep it from getting a superplague then you need to make an offering to the executives. Rent is up, always up. 
-        The market demands sacrifice if it is to thrive. "
+        n "A man is staring at you."
+        
+        n "A man wearing the traditional garb of collectors."
 
-        e "A man in a collared shirt is staring at you."
+        n "Shit." 
+        
+        n "He looks terrified, he's covered in sweat, but he's still coming closer. Must have been a new recruit, and a lowly one at that. Only they still had morals enough to outwardly show regret."
+        
+        n "To show regret before forcing people into the Harvest. Nonetheless, behind his expression you could see it."
+        
+        n "The inner fire to rise up the ranks has been stoked substantially. He won’t stop himself."
+        
+        #Need some way to include giveUp variable and corresponding text and panning across screen.
+        
+        n "You run."
+        
+        n "It's the day of the harvest, and you're unemployed."
+        
+        n "Bad day all things considered."
 
-        e "Shit. He saw you. Your filthy body, covered in mods that you were told would help you get a good job but never seemed to. Infected, sickly. He looks terrified, he's covered in sweat, but he's still coming closer."
-        e "The great engine of progress has gotten more and more quiet these past few days. Sky red and black haze has faded, but with that visibility and peace comes more risk."
-        e" It's the day of the harvest, and you're unemployed.
-        Bad day to be outside."
+        n "The man is running now." 
+        
+        c "Stop! Listen to me!"
+        
+        n "You run faster. All around you, signs with WORK and EMBRACE DISCIPLINE blur together."
 
-        e "The man is running now. Stop! Listen to me!"
-        e"You run faster. You can hear the thick, congested air whistle through one of the holes in your wrist from a botched modification surgery. All around you, signs with WORK and EMBRACE DICIPLINE blur together. "
+        n "You trip over a discarded bottle. The man's hands are on you within seconds. He wraps his arm around your throat and whispers"
+        
+        c "I'm so sorry" 
+        
+        n "...Just before the needle plunges into your neck. You black out."
+        
+        #Include the scene addition as is described in the google doc for this path
 
-        e "You trip over a discarded bottle.
-        The man's hands are on you within seconds. He wraps his arm around your throat and whispers,I'm so sorry just before the needle plunges into your neck. You black out. "
+        n "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run."
+        
+        n "The people are sobbing. Men, women, children. The few who aren't crying are either asleep or barely choking down their whimpers."
+        
+        #Including text from the helpOthers variable as put in a comment before
+        
+        n "You all know exactly what's coming."
 
-        e "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run. "
-        e" The people are sobbing. Men, women, children. The few who aren't crying are either asleep or barely choking down their whimpers. 
-        You all know exactly what's coming. You've seen the televised events."
+        n "The Harvest."
+        
+        #Add several “The Cog” character assets in Harvest uniforms
 
-        e "The Harvest."
-
-        e "The men in collared shirts drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
-        e " But you know what's coming. You forgot your rent, just look at you, there's no chance that putting on a show now will impress them.
+        n "The collectors drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
+        
+        n "But you know what's coming." 
+        
+        n "Just look at you. There's no chance that putting on a show now will impress them.
         Even with the sky blocked by smog, your eyes take a few seconds to adjust."
 
-        e "The market requires blood. They muttered."
+        tc "The market requires blood."
+        
+        #Adjust scene to The Pit asset. Get rid of all but one of “The Cog” character assets in Harvest uniform
 
-        e "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
-        e" Lines of black trucks pass between a massive wall of skyscrapers that overlook this place. How many have they brought for this harvest? 
-        At its center is a massive, incomprehensible machine. Blackened metal, enormous smokestacks, tubes leading nowhere and a dull red glow emanating from it."
-        e" Sharp spikes and needles spin across its surface in lazy orbits, chains made of spindles. Each booming sputter of the engine of progress as it struggles to run sounds like the beat of a vast heart. "
-        e" The man marches you to the lip of the pit and kicks the back of your leg."
-        e" You barely feel it as you fall to your knees. Your eyes are locked on the great engine.
-        A transaction must occur."
-        e" You feel a hand press your head into place, your throat now right against the rim of the pit."
+        n "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
+        
+        n "Lines of black trucks pass between a massive wall of skyscrapers that overlook this place. How many have they brought for this Harvest?"
+        
+        n "At its center is a massive, incomprehensible machine. Blackened metal, enormous smokestacks, tubes leading nowhere and a dull red glow emanating from it."
+        
+        n "Sharp spikes and needles spin across its surface in lazy orbits, chains made of spindles. Each booming sputter of the engine of progress as it struggles to run sounds like the beat of a vast heart. "
+        
+        n "The man marches you to the lip of the pit and kicks the back of your leg."
+        
+        n "You barely feel it as you fall to your knees. Your eyes are locked on the great engine."
+        
+        n "A hand presses your head into place, your throat now right against the rim of the pit."
+    
+        n "No need to scream now. You know what's coming."
 
-        e "No need to scream now. You know what's coming."
-
-        e "You feel the blade glide into your throat. 
-        The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
-        e "So much red, moving so quickly down the wall.
-        The engine pulses in time with your heart.
-        Even as it slows."
-        e "At least you served some purpose before you died.
-        The market grows stronger."
+        n "You feel the blade glide into your throat."
+        
+        #Adjust screen to be red tinted, either with a slightly adjusted Pit asset, or a not fully opaque red overlay. Not sure which would be easier.
+        
+        n "The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
+        
+        n "So much red, moving so quickly down the wall."
+        
+        n "The engine pulses in time with your heart."
+        
+        n "Even as it slows."
+        
+        n "The market grows stronger."
         jump the_end
 
         
@@ -423,7 +619,7 @@ label start:
         #continue text here
 
         if phone_call:
-        #put text for phone call True 
+            #put text for phone call True 
 
         
         if system: 
@@ -451,69 +647,57 @@ label start:
 
 
     label sacrafice_block_path:
-        e "The line is red. Going down. 
-        You try to control your breathing.
-        The only thing worse than bad numbers is being caught lying.
-        Bad, sir."
-        e "The exec screeches, a sound like knives being dragged across metal. Your ears are still ringing as he grips your shoulders and drags you away from your cubicle. "
+        e "The line is red. Going down. You try to control your breathing. The only thing worse than bad numbers is being caught lying. Bad, sir."
+        e "The exec screeches, a sound like knives being dragged across metal. Your ears are still ringing as he grips your shoulders and drags you away from your cubicle."
         e "Not good, not good, whelp! We need those numbers back up! You are reassigned. It's an important day."
 
-        e " The boss loads you to a van with blacked out windows. You climb You are told to remove your suit and tie - you don't want them getting stained more than they already are. You put on some sunglasses - official uniform."
-        e" You put in your earplugs - once the Harvest begins in earnest, the engine will deafen you without protection. Finally, you put on a pair of disposable gloves - official policy." 
-        e "You step out into the haze at the pit.
-        The Harvest is about to begin.
-        At least you didn't have to round them up."
+        e "The boss loads you to a van with blacked out windows. You climb You are told to remove your suit and tie - you don't want them getting stained more than they already are. You put on some sunglasses - official uniform."
+        e "You put in your earplugs - once the Harvest begins in earnest, the engine will deafen you without protection. Finally, you put on a pair of disposable gloves - official policy." 
+        e "You step out into the haze at the pit. The Harvest is about to begin. At least you didn't have to round them up."
 
         e "You march to the edge of the pit. A woman dressed like you marches a dirty man over to you. He's covered in holes from body mods - remnants of jobs that didn't pan out."
-        e " You absently rub the port at the base of your skull - then remember why you are here. A buzz rings over the sound of the engine of progress's thudding heartbeat - the signal to begin."
+        e "You absently rub the port at the base of your skull - then remember why you are here. A buzz rings over the sound of the engine of progress's thudding heartbeat - the signal to begin."
         e "You stare at the knife in your hand, then down at the filthy waste of space whose head is now sitting over the edge of the pit. You kneel down and put the blade to his throat."
 
         e "The market is thirsty"
         
         e "Begin the harvest."
 
-        e "You swipe the knife across the man's throat like a card through a reader. Just a swipe, purposeful and smooth. He deserves that much, at least.
-        He gurgles as he chokes on his last breath as it bubbles past the flow of blood."
-        e" You keep your knee on his back, but he doesn't struggle. A minute passes before he's empty. A co-worker you can't remember the name of comes over to collect the drained body and drag it to the furnace chute. The engine grows louder. 
-        At least this will improve the numbers."
+        e "You swipe the knife across the man's throat like a card through a reader. Just a swipe, purposeful and smooth. He deserves that much, at least. He gurgles as he chokes on his last breath as it bubbles past the flow of blood."
+        e "You keep your knee on his back, but he doesn't struggle. A minute passes before he's empty. A co-worker you can't remember the name of comes over to collect the drained body and drag it to the furnace chute. The engine grows louder. At least this will improve the numbers."
 
-        e " Another victim is pushed down to the chopping block. This one is crying, she is begging for a chance to pay her rent, she has the money, she swears.
-        She takes another minute to drain."
-        e" Just let it happen, there's no point in fighting this. If nobody is sacrificed, the economy would suffer. If the economy suffers, everyone suffers. "
-        e" If a few have to have an unpleasant death for you and everyone you know to go to bed with a full belly and a roof over your head, then so be it."
-        e" You are sorry for the first few.
-        But they blur together."
+        e "Another victim is pushed down to the chopping block. This one is crying, she is begging for a chance to pay her rent, she has the money, she swears. She takes another minute to drain."
+        e "Just let it happen, there's no point in fighting this. If nobody is sacrificed, the economy would suffer. If the economy suffers, everyone suffers. "
+        e "If a few have to have an unpleasant death for you and everyone you know to go to bed with a full belly and a roof over your head, then so be it."
+        e "You are sorry for the first few. But they blur together."
         e "By the end of the Harvest, your eyes are glazed over and your hands shake. The gloves are filled with sweat."
-        e" The engine screams its approval and belches its delight into the sky with clouds of red and black."
-        e" You stumble back to the van.
-        You get the rest of the day off."
+        e "The engine screams its approval and belches its delight into the sky with clouds of red and black."
+        e "You stumble back to the van. You get the rest of the day off."
 
         jump the_end
 
 
     label chopping_block_path:
-        e "The line goes up. Green. You cough out Good! they are good. P-profit!
-        The boss's many needle teeth clink in his vast mouth. From the upper jaw all the way down to the collar of his suit is a series of fused needles and metal thorns that tap together one after another. "
+        e "The line goes up. Green. You cough out Good! they are good. P-profit! The boss's many needle teeth clink in his vast mouth. From the upper jaw all the way down to the collar of his suit is a series of fused needles and metal thorns that tap together one after another."
         e "Tip-tap, over and over. Click-clack, so much noise. 
         Glad to hear it, worm. Keep working."
         e "He slaps your back, tearing your cheap garbage suit and ripping into your soft human skin. You whimper, but don't say anything." 
-        e" This suit isn't worth it. Besides, complaining about pain to an exec means nothing now that they have escaped the feeble state of humanity."
-        e" The exec buzzes and clicks. You hear the tap of crisp shoes on the ground as he walks away, but you know that he is still watching you with one of his eyes. Even once he leaves your cubicle, he is watching you. Always."
+        e "This suit isn't worth it. Besides, complaining about pain to an exec means nothing now that they have escaped the feeble state of humanity."
+        e "The exec buzzes and clicks. You hear the tap of crisp shoes on the ground as he walks away, but you know that he is still watching you with one of his eyes. Even once he leaves your cubicle, he is watching you. Always."
 
         e "A few hours of feverish work pass before the intercom buzzes over the clacking of dozens of keyboards. 
         ATTENTION LOYAL WORKERS. THE DAY OF THE HARVEST IS HERE. TURN YOUR ATTENTION TO YOUR SCREENS FOR THIS IMPORTANT MOMENT."
-        e "Your eyes unfocus as the wall of numbers is replaced by a grainy view of a massive pit. You've seen this so many times, can't you just skip it? You have a lot of work to do and this is the same every time. "
-        e"The pit grows darker and darker as it gets deeper, stained by generations of blood pooling and drying. Rings of filthy people are lined up around the edge of the pit, their heads over the lip."
-        e" Behind each sacrifice, a man or woman in a simple collared shirt.  "
+        e "Your eyes unfocus as the wall of numbers is replaced by a grainy view of a massive pit. You've seen this so many times, can't you just skip it? You have a lot of work to do and this is the same every time."
+        e "The pit grows darker and darker as it gets deeper, stained by generations of blood pooling and drying. Rings of filthy people are lined up around the edge of the pit, their heads over the lip."
+        e "Behind each sacrifice, a man or woman in a simple collared shirt."
 
 
         e "The Harvest finally begins"
 
         e "Each sacrifice's throat is carved open and allowed to drain into the gaping maw. At its center beats the heart of the market, the engine of industry greedily lapping up its offering."
-        e" The empty bodies are tossed into a chute added to its furnace. The machine roars louder and louder, eventually rendering the audio of the broadcast silent to prevent damage to the speakers. "
-        e "The display continues for minutes. Maybe hours. It's much less nauseating after so many harvests. It's hard to watch, but without a little grease for the gears, how can the market thrive? "
-        e " Finally, the broadcast ends. The numbers are definitely good now. Nothing like a little bit of blood to really breathe some life into the economy.
-        You keep working. There's a lot more to do today."
+        e" The empty bodies are tossed into a chute added to its furnace. The machine roars louder and louder, eventually rendering the audio of the broadcast silent to prevent damage to the speakers."
+        e "The display continues for minutes. Maybe hours. It's much less nauseating after so many harvests. It's hard to watch, but without a little grease for the gears, how can the market thrive?"
+        e " Finally, the broadcast ends. The numbers are definitely good now. Nothing like a little bit of blood to really breathe some life into the economy. You keep working. There's a lot more to do today."
 
         jump the_end
 
@@ -540,23 +724,20 @@ label start:
                     jump regret_path
 
     label honored_path:
-    e "The CEO must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh.
-    You know, Anders, you might have what it takes to be an exec after all. What do you say? "
+    #Need to adjust this for when the CEO speaks to switch to them being the one speaking.
+    e "The CEO must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh. You know, Anders, you might have what it takes to be an exec after all. What do you say? "
 
-    e "All your dicipline has paid off.
-    All your hours of grind, all your sacrifices."
+    e "All your dicipline has paid off. All your hours of grind, all your sacrifices."
+    
     e "The saws come towards your soft flesh and you do not flinch as they open you up. The pain is excrutiating, but you have come much too far to let that stop you. "
-    e" Piece by piece, they peel off the parts of yourself that you don't need. You are a perfect engine of profit, a being with none of the weaknesses you once had.
-    Last is your heart."
-    e" You weren't using it much anyway.
-    Your bonus is going to be huge this quarter.
-    No more sleep. No more need for dreams when your dream has finally been realized, after all."
+    
+    e "Piece by piece, they peel off the parts of yourself that you don't need. You are a perfect engine of profit, a being with none of the weaknesses you once had. Last is your heart."
+    
+    e "You weren't using it much anyway. Your bonus is going to be huge this quarter. No more sleep. No more need for dreams when your dream has finally been realized, after all."
 
-    e "Your new body is so sharp. The world is so bright, moves so slowly. So much noise, so many angles you can view.
-    Behind the veil of this world is an endless series of transactions, a perfect system where energy all moves towards those who truly deserve it."
-    e" You are so very beautiful now.
-    The numbers are good. "
-
+    e "Your new body is so sharp. The world is so bright, moves so slowly. So much noise, so many angles you can view. Behind the veil of this world is an endless series of transactions, a perfect system where energy all moves towards those who truly deserve it."
+    
+    e "You are so very beautiful now. The numbers are good."
 
     e "You recieved the promotion you were working for after all. So many bodies, and you should be proud! But even though you are an exec, you aren't a CEO yet - there's still worlds of profit to be made."
 
@@ -565,14 +746,14 @@ label start:
 
     label regret_path: 
 
-    e " You think of the screams."
+    e "You think of the screams."
     e "So many people harvested this year."
     e "Of course, the surplus population must be dealt with somehow. If they aren't willing to work, why bother living?"
     e "You think of the youngest one in that crowd, a thin boy with ripped sweatpants. Couldn't have been much more than 15. Must have been a dropout."
     e "You think of his blood gushing from the jagged slash in his throat, of the pool of gore at the bottom of the pit as your underlings held the sacrifices down and drained them."
     e "The sound of rumbling deep in the pit."
     e "A great machine roared to life, refueled."
-    e "The sky blackensed as the great engine of industry began to howl again, its vents greedily slurping the sacrificial blood as the dried husks are tossed into its waiting furnace."
+    e "The sky blackens as the great engine of industry began to howl again, its vents greedily slurping the sacrificial blood as the dried husks are tossed into its waiting furnace."
     e "But you let doubt into your mind."
     e "You return to reality."
     e "The CEO's eye is focused on you."
@@ -581,7 +762,7 @@ label start:
 
                 jump death_path
             
-            "Accept your fate .":
+            "Accept your fate":
 
                 jump almost_path
 
