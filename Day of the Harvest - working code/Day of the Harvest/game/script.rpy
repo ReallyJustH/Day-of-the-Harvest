@@ -68,8 +68,8 @@ label start:
     # directory.
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
-
-    image questionaire = im.Scale("questionaire.png", 1000, 1000)
+    image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
+    image questionaire = im.Scale("CEO.png", 1000, 1000)
     show questionaire 
     $ score_counter = 0
 
@@ -623,6 +623,7 @@ label start:
         scene bg office
         with fade
         #need to add name variable. # NEED TO ADD MAN/MISS VARIABLE TEMPORARY PLACEHOLDERS.
+        show neutralCharacter
         n "You are NAME, a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
         n "Four years ago, you passed college with mediocre grades and a mountain of debt, but fortunately managed to secure this job. "
         n "Since then, things have not been easy, but then again, nothing in life is supposed to be easy. "
@@ -914,7 +915,7 @@ label start:
         Phone "“But remember, your job resumes tomorrow. See you at 9:00!”"
         Phone "“Sincerely, the MDAS Corporation”"
         n "You let your phone fall to the ground and begin to sob."
-
+        hide neutralCharacter
         jump the_end
 
     label sacrafice_block_path:    
