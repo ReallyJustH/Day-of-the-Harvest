@@ -11,10 +11,16 @@ define tc = Character("The Collectors")
 define cogM = Character("Cog(Male)")
 define cogF = Character("Cog(female)")
 define fm = Character("Floor Manager")
-define craig = Character("Craig")
+define Craig = Character("Craig")
 define hm = Character("homeless man")
 define meli = Character("Melissa (Wife)")
 define ceo = Character("CEO")
+define Waste = Character("Waste")
+
+define Phone = Character("Phone")
+define Driver = Character("Driver")
+define Skittles = Character("Skittles the Cat")
+
 
 
 
@@ -614,52 +620,206 @@ label start:
         
     #cog story
     label cog_story:
- 
-        e " You stare blankly at the screen as it buzzes. Red, green, blue, all the colors in the world. Your boss is behind you, a towering figure of intricate metal spindles 
-        and spikes that reaches towards heaven with every motion. "
-        e"The stretched steel skeleton wears a beautiful cashmere suit, it's simply gorgeous. Your suit didn't cost shit. 
-        the boss speaks in a chourus of whispers, a dozen voices of business prowess."
-        e" The numbers, whelp, how are the numbers?"
-        e "You try not to look at the spinning metal form of the boss or his cashmere suit worth more than your car."
-        e "The screen shows a rising and falling set of stocks, many colors of potential profit that fluctuate up and down like a heartbeat.
-        The beating heart of the world, the transaction of value. But you are no exec, the numbers don't make sense."
-        e "You choke on your words."
-        "Well, whelp, how are the numbers?"
-        woman "“I can’t do this anymore…” The woman begins to sob."
-        
+        scene bg office
+        with fade
+        n "You are [Name], a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
+        n "Four years ago, you passed college with mediocre grades and a mountain of debt, but fortunately managed to secure this job. "
+        n "Since then, things have not been easy, but then again, nothing in life is supposed to be easy. "
+        n "Your parents raised a hard worker… most of the time. "
+        n "It’s currently Wednesday morning. You sit in a seemingly endless room lined wall-to-wall with near-identical gray cubicles. "
+        n "You answer emails, take calls from disgruntled customers, and write reports."
+    
+        n "One call, an exhausted-sounding woman sounds like she’s trying to hold back tears."
+        Phone "“What do you mean it’s denied? I was supposed to be able to…”"
+        n "You cut her off with a response from your checklist. "
+        n "“We’re terribly sorry, ma’am, there’s nothing that can be done. Perhaps a different package will better suit your needs.”"
+        Phone "“I don’t have the money for a different insurance package. The contract said-”"
+        n "“We’re sorry, but the contract explicitly stated that the terms were subject to change. It’s unfortunate that you-” "
+        Phone "“I can’t do this anymore…”"
+        n "The woman begins to sob."
+
+        phone "“I can’t do this anymore…” The woman begins to sob."
+
         menu:
-                "Give her a refund.":
-                    $ refund = True
-                
-                "Follow the system.":
-                    $ system = True
+            "Give her a refund.":
+                $ refund = True
 
-        if phone_call:
-            #put text for phone call True 
-            "block text for test"
+            "Follow the system.":
+                $ system = True
 
-        
-        if system: 
-            #put text for if system is true 
-            "block text for test"
+        if refund:
+        #put text for refund True
+            n "You sigh, then check behind you. No sign of the floor manager roaming between the cubicles."
+            n "“Listen, I can offer a partial refund. I’m really sorry, 50% is the best I can do.”"
+            n "The woman’s voice is still close to crying, but you can tell that she will settle for this."
+            Phone "“Thank you… thank you so-”"
+            n "You hear a distant sound of metal dragging across metal and snap back into your corporate voice. "
+            n "“No problem, Ma’am. Now if you could just give me your ID number so I can handle that…”"
+            n "You finish up her call without issue."
 
-
-        #continue text here
-
-        if phone_call:
-            #put text for phone call True 
-            "block text for test"
-
-
-        
-        if system: 
+        if system:
             #put text for if system is true
-            "block text for test"
- 
+            n "You clench your jaw. This is the worst part of the job, always is. But it has to be done."
+            n "“I’m…. terribly sorry. Perhaps I can redirect you to someone who-”"
+            n "The woman hangs up. You sigh deeply."
 
         #continue text here
-            "block text for test"
+        n "The next few hours are more manageable. "
+        n "People get angry with you and there’s always more emails to check and forms to stamp or sign, but that’s normal."
+        n "Lunch break finally comes. You sigh with relief before standing and walking with the horde of co-workers to the lunchroom."
+        n "You’re standing in one of the dozens of lines in front of the company-owned vending machines when Craig, your co-worker, approaches you. "
+        n "Technically, Craig is your superior, but he’s always been nice to you."
+        Craig "“Hey, [Name]! Listen, I was talking to some of the guys about Frank earlier."
+        Craig "We thought it would be good if everyone donated a dollar or two to a fund to buy something for Frank’s widow."
+        Craig "You know, something from all of us to help her out.”"
+        n "Frank had collapsed in his cubicle with a heart attack last week."
+        n "He had worked here much longer than you, but he was around 8 cubicles away, so you didn’t know him too well."
+        n "You heard that the people in the cubicles next to them had heard him groaning a few hours before lunch, but nobody got up to check on him until the break started."
+        n "You wonder if you had a heart attack, would your co-workers check on you?"
+        n "How long did Frank struggle for breath while nobody came to help?"
+        n "Craig’s voice pulls you back to reality."
+        Craig "“[Name]? You good?”"
+        n "“Oh! Yeah, sorry. Sure, I can give a dollar.”"
+        n "Craig smiles as he puts the dollar into the shoebox."
+        Craig "“Thanks, [Name]. Hey, are we still on for Friday?”"
+        n "“Oh yeah, of course.”"
+        n "You, Craig, and a bunch of the other clerical workers are planning on going out drinking on Friday, two days from now. "
+        n "After all, morale is usually pretty low and prices drop the day after the Harvest."
+        n "Oh, right."
+        n "Tomorrow is the Day of the Harvest."
+        n "You try not to think about it as you eat your protein bar, dry salad, and cookies."
+        n "Soon enough, you return to work."
+        n "…"
+        n "After about another hour of work, you begin to hear the sound of metal dragging on metal in the distance."
+        n "Please don’t stop here."
+        n "You cringe as you hear the metallic screeching get louder, but under it you hear the sound of sleek shoes tapping on the ground."
+        n "All around you, the normal muffled sounds of your co-workers on calls fall silent."
+        n "The Floor Manager is here."
+        e "“Zhang.”"
+        n "You swivel your chair around and try your best to smile."
+        n "“H-hello, Sir!”"
+        n "The Floor Manager speaks to you in a voice that could never issue from a human mouth. "
+I       n "It’s a sound that’s one part the rasp of a file on bone, one part grinding metal, and one part a distant scream –"
+        n " - all somehow forming coherent words in your mind."
 
+        if refund:
+            #put text for refund True
+            e "“You gave a partial refund at 10:32 to a customer who was not entitled to one. Exxxxxplain, meat.”"
+            n "The Floor Manager is an Executive. Something you could never possibly hope to be."
+            n "Far beyond human, having ripped the last weaknesses from his body. He’s a being of perfection now, intricate in his design and complete in every haunting detail."
+            e "“Whelp. You have ten seconds to answer my query.”"
+            n "The Floor Manager’s fingers are long curved hooks, tipped with barbs like fishhooks."
+            n "They begin to twitch and rattle, like the Floor Manager is moments from ripping you apart."
+            n "“S-sir, I felt that….”"
+            n "The Floor Manager’s bloodshot eyes jitter as the chain-like loops of his head wind through each other, but his cloudy pupils stay focused on you."
+            n "You look away, forcing yourself to stare at his luxurious suit."
+            n "Of course, the Executives worked hard to earn this form. Only the most savvy and brilliant are allowed to transcend human limitations."
+            n "Unlike you, the Floor Manager would never need to sleep or eat. His enhanced body and mind made him a true leader."
+            n "You know that he can see time not as a set line, but as a branching set of paths that he can examine and choose from."
+            n "An Executive never makes mistakes, never hesitates in their choices."
+            n "They sacrificed everything for that power: their families, their morals, their humanity."
+            n "You shudder and jolt back to reality. Hopefully, you didn’t pause long enough to anger him."
+            n "“W-w-well, I felt that the client’s emotional state h-had reached a breaking point."
+            n "A-and if I didn’t do something, then we would have l-lo-lost her future purchases?”"
+            n "The suit is extravagant. It probably costs half a year’s worth of your rent to buy it, maybe more."
+            n "You would never have a suit like that. You could barely afford your dress shirts, let alone something that beautiful."
+            n "The Manager’s hooked claws rest on your shoulder, opening tiny cuts in your shirt with the slight touch. "
+            n "You close your eyes and try not to let the Floor Manager see how hard you were shaking."
+            e "“Accccceptable.”"
+            n "He lifts his fingers off of you, opening a slit in the fabric, but leaving your skin intact."
+            e "“But be warned, wretch- another mistake like that, and you will wish you were never born. Follow the protocol. No exxxxxceptions.”"
+            n "The Floor manager dusts off his suit, his impossibly sharp digits somehow doing no damage to the fabric at all."
+            e "“Ensure that thisssss…. Compassion of yours does not become an issue tomorrow.”"
+
+
+        if system:
+            #put text for if system is true
+            e "“You’ve been performing… adequately, sssslug.”"
+            n "The Floor Manager is an Executive. Something you could never possibly hope to be. "
+            n "Far beyond human, having ripped the last weaknesses from his body."
+            n "He’s a being of perfection now, intricate in his design and complete in every haunting detail."
+            n "Of course, the Executives worked hard to earn this form. Only the most savvy and brilliant are allowed to transcend human limitations."
+            n "Unlike you, the Floor Manager would never need to sleep or eat. His enhanced body and mind made him a true leader."
+            n "You know that he can see time not as a set line, but as a branching set of paths that he can examine and choose from."
+            n "An Executive never makes mistakes, never hesitates in their choices."
+            n "But it comes at such a cost."
+            n "You shudder and jolt back to reality. Hopefully, you didn’t pause long enough to anger him."
+            n "“Th-thank you, Sir!”"
+            n "The Floor Manager’s fingers are long curved hooks, tipped with barbs like fishhooks. They begin to twitch and rattle idly, a repetitive mechanical motion."
+            e "“Perhaps by the end of the quarter, a sssssmall raise could be in order. Provided, of course, you do well tomorrow.”"
+            n "The Floor Manager’s bloodshot eyes jitter as the chain-like loops of his head wind through each other, but his cloudy pupils stay focused on you."
+            n "You look away, forcing yourself to stare at his luxurious suit."
+            n "“Of course, Sir, tomorrow.”"
+            n "His suit is extravagant. It probably costs half a year’s worth of your rent to buy it, maybe more."
+            n "You would never have a suit like that. You can barely afford your dress shirts, let alone something that beautiful."
+            e "“It is good that you understand the ssssignificanccce of tomorrow, meatbag. Be at the pickup location at 0900 hours.”"
+            n "“O-of course, Sir. Absolutely.”"
+
+
+        #continue text here
+        n "The Floor Manager’s head turns all the way around, followed by his body, and then his legs each spin away as he stalks, humming, down the hall of cubicles."
+        n "You struggle to catch your breath."
+        n "You had signed up to help with the Harvest tomorrow as a last resort."
+        n "Rent was going up, and even though you were scheduled for a 20 cent per hour raise by the end of the quarter, you needed a little extra cash to make it until then."
+        n "The rest of the work day is uneventful."
+        scene bg streets
+        with fade
+        n "…"
+        n "The walk from the MDAS Company’s office to the subway station is short, but even so, you see a number of grimy homeless people as you walk."
+        Waste "“Hey, [man/miss], can you spare some change?”"
+        n "You avoid making eye contact. If they don’t have money today, it’s already far too late for them. Charity handouts won’t help them."
+        Waste "“Anything helps. I just want to be off the streets tomorrow, you know?”"
+        n "One is following you. You speed up, trying to avoid letting him touch you."
+        Waste "“Come on, I don’t want to be out here when-”"
+        n "You push through the turnstile at the subway entrance and walk quickly and silently to your stop."
+        n "The ride home is silent, but you can’t shake away the thought of the people who you know won’t have enough for tomorrow."
+        n "The company would say that they made their mistakes. It’s too late now."
+        n "You just hope that’s true."
+        scene bg room
+        with fade
+        n "…"
+        n "You get home, kick off your shoes, drop your bag and collapse onto your couch."
+        n "Your apartment is small and unimpressive, but it’s yours. Brown carpet, off-white walls."
+        n "Cramped in some rooms and with some drafty windows, but it’s close to the subway and in a safe area."
+        Skittles "“Mrow!”"
+        n "Your cat, Skittles, scampers up to you."
+        n "“Hey, girl! Sorry, work went rough tonight.”"
+        Skittles "(purring)"
+        n "“Oh, you want fresh food, huh?”"
+        Skittles "“Mrow!”"
+        n "You pour her a fresh bowl of food before heating up a bowl of instant ramen."
+        n "You sit at your counter and watch a few videos on your phone, petting Skittles as she lays in your lap."
+        n "You go to bed at a reasonable time, but don’t sleep well at all."
+        n "You know what’s coming tomorrow."
+        scene bg streets
+        with fade
+        n "…"
+        n "The next morning, you shower, put on a dress shirt and pants, and give Skittles a few scratches before walking to the designated spot on your street."
+        n "A smooth black van rolls to a stop in front of you before its door slides open. The inside is mostly empty, but a few people sit in seats along the side."
+        n "They are dressed in black masks that cover their mouths and nose, sunglasses, disposable gloves, and long kitchen aprons."
+        n "Their sleeves are rolled up. As you climb in, one hands you your uniform."
+        n "You put it on wordlessly. Aside from the rumbling of the van as it accelerates, all is silent."
+        n "The Harvest has begun."
+        n "Most of the sacrifices are already accounted for. It’s a weeks-long process to round them up from the surrounding area and transport them to the city."
+        n "But even so, part of the job is making sure that any undesirables on the streets are taken care of."
+        n "It’s all for the bonus, you think to yourself. Somebody has to do it."
+        n "It’s starting to get bright outside despite the endless haze of smog that always covers the sky."
+        n "Driver “On the left. One sacrifice.”"
+        n "You look out and see the same homeless man from last night limping down the empty street, glancing at the van in fear."
+        n "What the hell is he doing outside today? He should have-"
+        n "No. You can’t get emotional about this. It’s just the same as anyone else."
+        n "The driver gestures to you."
+        Driver "“Grab him.”"
+        n "You are handed a syringe and rope."
+        n "You grit your teeth behind your mask and climb out of the van as the homeless man runs down an alleyway."
+        n "You chase after him. Even though you don’t exactly have time to exercise, he’s clearly in no state to run. You gain on him quickly."
+        scene bg darkalley
+        with fade
+        Waste "“Please, [Man/Miss], I’m sorry! I can pay by the end of the week, I swear!”"
+        n "You get closer. You aren’t sure what he’s talking about – really, it could be any number of debts. It doesn’t matter now."
+        Waste "“Listen, I—”"
+        n "You tackle him to the ground, and he begins sobbing."
+        n "Can you really do this?"
 
         menu:
             "You can't":
@@ -669,14 +829,98 @@ label start:
                 $ haveTo = True
 
         if cannot:
-            "block text for test"
-
+            n "You grit your teeth, then climb off him. It takes a few moments before he stops quivering and looks up at you."
+            n "“Hide. Just stay out of sight for the rest of the day. I’ll say you escaped.”"
+            Waste  "“Thank you! Thank you so much!”"
+            n "You gesture for him to hide and walk back to the van."
+            Driver "“Where is the sacrifice?”"
+            n "“He escaped. Couldn’t find him. Maybe he hid in a building.”"
+            Driver "“Forget it, we have a schedule to keep. Let’s move.”"
 
         if haveTo:
-            "block text for test"
+            n "You plunge the syringe into his grimy neck and press the plunger."
+            n "“I’m sorry.”"
+            n "He goes limp instantly. You tie his hands and call over someone else to help you drag him back to the van, where you lie him flat on the bed of the vehicle."
+            scene bg streets
+            with fade
+        #text continues here
+        n "No more words are exchanged as you continue to the pickup location."
+        n "Eventually, you reach a featureless warehouse and help armed security staff in black riot gear force a crowd of bound and dirty people into the van. "
+        n "Most are crying. There’s all ages – an old man here, a mother and a filthy child there. You try desperately not to look at them until the van doors are slammed shut."
+        n "As you approach the Harvest site, the sound of a distant rhythm becomes audible. It’s timed like the beat of a heart, but sounds like the deep rumble of thunder."
+        n "You are told to put in your earplugs shortly before the van rolls to a stop."
+        n "Outside is a giant clearing in the endless skyscrapers. At its center is a huge, circular pit."
+        n "The pit is larger than your apartment building’s footprint, and all around it are dozens of identical black vans and lines of people leading up to the edge."
+        n "An enormous tower of thick and acrid black and red smoke floods out of the pit in time with the thundering pulse."
+        n "The eerie red light from the pit paints strange shadows on the skyscrapers. "
+        n "Despite still being early morning, the smoke blots out the sky, leaving everything in darkness. The windows of the skyscrapers are cast in an eerie blood-red glow."
+        n "You grab a sacrifice out of the van and direct them to join the nearest line."
+        n "They cringe at the deafening sound echoing from the pit and try to say something, but you cannot hear them."
+        n "You unload your van’s load of people into a line and force them to march towards the pit. "
+        n "You do your best not to look, but you know that you are being circulated towards the end as well. You have to take a turn Harvesting as part of the job, after all."
+        n "The sound is getting louder and faster. Like a heart in the throes of excitement. Even with the earplugs, you can hear inhuman wailing and a roar like an engine."
+
+        if cannot:
+            n "You glance across the lines and see the homeless man you spared on your way to the pit."
+            n "Your mouth goes dry."
+            n "There was no chance for him after all."
+
+        if haveTo:
+            n "The man you captured groggily shuffles past you, barely conscious as the tranquilizer wears off. You do your best not to look at him."
+            n "If not you, someone would have done it."
+            n "If not this year, then next year."
+
+        #back to normal text
+        n "Inevitably, you find yourself at the edge of the pit."
+        n "Below is a dizzying fall, hundreds of feet, so far you can only barely see the bottom through the haze of the bloody smoke."
+        n "The enormous pit’s walls are all stained red, the shade growing deeper and darker as it descends."
+        n "At the bottom, a vast engine roars."
+        n "It is incomprehensibly huge, built like a twisted and inhuman heart made of metal and bone, with thousands of slurping tubes and thudding pistons and whirling gears."
+        n "You feel dizzy looking at it, its enormous structure expanding and contracting in a way that nothing that huge should as acrid smog belches out of the smokestacks that cover it."
+        n "It is the source of the world’s prosperity."
+        n "The Engine of Industry."
+        n "The Harvest is all for this - a ritual to fuel the vast machine of society itself."
+        n "The cost is terrible, but prices must be paid. A machine cannot run without energy, and the world would fall apart if the Engine stopped."
+        n "If the Engine stopped, you’d lose your job."
+        n "If the Engine stopped, you would lose your home."
+        n "If the Engine stopped, everything would be over."
+        n "The apron-wearing woman at the front of the line taps your shoulder and gestures to you."
+        n "You know what needs to be done."
+        n "You clench your teeth and grip your knife."
+        n "The first man is incredibly skinny, his skin covered in open sores."
+        n "You glide the blade through his throat, letting his blood spill onto the edge of the pit."
+        n "It joins the indistinguishable tide of blood coating the walls of the pit from hundreds already Harvested."
+        n "You wait a while for her to drain before gesturing for the other person at the front to drag the body off for disposal."
+        n "The next woman is nowhere near as dirty as the others. Perhaps she wasn’t homeless, but rent was due and she couldn’t pay."
+        n "It doesn’t matter why you’re low on money when the Harvest begins, it only matters that anyone dragging down the economy must be dealt with."
+        n "The Engine must have fuel. Without it, we would have nothing."
+        n "Another, a teenager. You were still in high school at their age. How did this happen to them?"
+        n "You slit their throat and your eyes go unfocused to the screaming and thudding of the Engine."
+        n "Without the Harvest, we would starve, or be destitute."
+        n "It ensures that the productive members of society are able to thrive and the worthless are purged."
+        n "It pumps blood like a heart to all the megacorporations and businesses of the world to ensure that they succeed and keep society functioning."
+        n "That’s what you were always told, and what you always believed."
+        n "It’s little comfort now."
+        n "Within about an hour, you stumble to the back of the line as your shift ends."
+        n "Another masked and aproned figure loads you into a van. You strip off the gloves, the mask, the sunglasses, and the gory apron."
+        n "Despite the precautions, your clothes are stained red. Your ears ring long after you are miles from the pit."
+        n "You only now realize that you’ve been crying for the last hour."
+        n "When you are dropped off at your apartment, you stagger to the elevator."
+        n "You lurch into your apartment, where Skittles greets you, unaware of what you did today."
+        n "You collapse to the couch and hold her. She’s so small and delicate."
+        n "She purrs softly."
+        n "You receive a text notification from the MDAS Corporation."
+        Phone "“Thank you for your participation in this year’s Harvest! Your bonus has already been deposited in your account.”"
+        Phone "“Feel free to enjoy the rest of your day off – you’ve earned it!”"
+        Phone "“But remember, your job resumes tomorrow. See you at 9:00!”"
+        Phone "“Sincerely, the MDAS Corporation”"
+        n "You let your phone fall to the ground and begin to sob."
 
 
-        #text continues here 
+        jump the_end
+
+
+
 
 
 
