@@ -333,6 +333,7 @@ label start:
 #Put stuff for waste story here 
     label waste_story:
         #put text here for the story until waste road choice
+        show neutralCharacter
         n "You are homeless."
         
         n "You have been for weeks…or was it months…years? It’s hard to tell now."
@@ -615,6 +616,7 @@ label start:
         n "Even as it slows."
         
         n "The market grows stronger."
+        hide neutralCharacter
         jump the_end
 
         
