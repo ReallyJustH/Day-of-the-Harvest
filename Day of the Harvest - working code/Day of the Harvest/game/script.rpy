@@ -301,7 +301,7 @@ label start:
                 
                 "I have it. This was a moment of weakness":
                     $ score_counter += 1 
-                    jump Bingo_salvaged_flag
+                    jump bingo_salvaged_flag
 
                 "I guess not...":
                     $ score_counter -= 5
@@ -1001,78 +1001,58 @@ label start:
 
         #change of scene to home
         n "Hours later the sun has set and you arrive home to the smell of a home cooked meal lingering in the air."
-
         n "It would have been comforting had you arrived on time to see your family sitting down to eat it. Instead you feel a pang of guilt accompanied by your ever creeping loneliness."
-
         n "The emotions sit within your gut heckling you as you spoon the lukewarm gruel into your inefficient meat body."
-
         n "Maybe after the harvest you'll be able to afford some upgrades for more efficient energy storage."
-
-	    n "Melissa has heard you arrive. You sppt her descending the stairs."
+        n "Melissa has heard you arrive. You sppt her descending the stairs."
 
         me "You promised you would be home on time today.” She states coldly. “I already put the children to bed."
 
         menu:
-            "There was an issue at Work I had to take care of. The Harvest needs my full attention right now."
-
-            jump CODB_Dialogue_1a
-
-            "I’ve told you Work is going to take more of my time until the Harvest. If the Boss recognizes my efforts we’ll all benefit"
-
-            jump CODB_Dialogue_1b
+            "There was an issue at Work I had to take care of. The Harvest needs my full attention right now.":
+                jump CODB_Dialogue_1a
+            "I’ve told you Work is going to take more of my time until the Harvest. If the Boss recognizes my efforts we’ll all benefit":
+                jump CODB_Dialogue_1b
         
     label CODB_Dialogue_1a:
         me "Your family needs your attention! When will you make us a priority?"
 
         menu:
-            "This is for all of our sakes. If I get promoted more I can provide for us better."
-
-            jump CODB_Dialogue_2a
-
-            "I have more on the line than just our family! The entire Harvest depends on me and my efforts."
-
-            jump CODB_Dialogue_2b
+            "This is for all of our sakes. If I get promoted more I can provide for us better.":
+                jump CODB_Dialogue_2a
+            "I have more on the line than just our family! The entire Harvest depends on me and my efforts.":
+                jump CODB_Dialogue_2b
 
     label CODB_Dialogue_1b:
 
         me "You’ve used work being busy as an excuse for years. When will you make us a priority?"
 
         menu:
-            "This is for all of our sakes. If I get promoted more I can provide for us better."
-
-            jump CODB_Dialogue_2a
-
-            "I have more on the line than just our family! The entire Harvest depends on me and my efforts."
-
-            jump CODB_Dialogue_2b
+            "This is for all of our sakes. If I get promoted more I can provide for us better.":
+                jump CODB_Dialogue_2a
+            "I have more on the line than just our family! The entire Harvest depends on me and my efforts.":
+                jump CODB_Dialogue_2b
 
     label CODB_Dialogue_2a:
         me "We both know everything you do at work is just for yourself. Don’t act like you aren’t being selfish."
 
         menu:
-            "If I put in the hours now it means more time for us as a family later!"
-
-            jump CODB_Dialogue_3a
-
-            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there."
-
-            jump CODB_Dialogue_3b
+            "If I put in the hours now it means more time for us as a family later!":
+                jump CODB_Dialogue_3a
+            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there.":
+                jump CODB_Dialogue_3b
 
     label CODB_Dialogue_2b:
         me "Is the harvest really worth giving up everything you love? You aren’t serving anyone doing this, you’re just being selfish."
 
         menu:
-            "If I put in the hours now it means more time for us as a family later!"
-
-            jump CODB_Dialogue_3a
-
-            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there."
-
-            jump CODB_Dialogue_3b
+            "If I put in the hours now it means more time for us as a family later!":
+                jump CODB_Dialogue_3a
+            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there.":
+                jump CODB_Dialogue_3b
 
     label CODB_Dialogue_3a:
         me "I hope you’re right about that. It’s getting late, let's go to bed. We can talk more about this tomorrow."
-
         jump business_story_cont
 
 
@@ -1082,51 +1062,28 @@ label start:
     label business_story_cont:
         #new scene, offic builsing looking out onto the harvest
         n "The Harvest is finally here." 
-
-	    n "You and the other managers have been given wonderful seats to view the carnage."
-
-	    n "The crowd beneath you grows as a seemingly endless number of trucks relentlessly spew out victims who are led towards the gasping pit in the earth."
-
-	    n "You can feel the dread oozing out from the crowd. It is matched in magnitude only by the relief you and your coworkers feel, gazing down on them from your office above."
-
-	    n "You all had done acceptable jobs this year. The Harvest was going well. You would live to see another day, and the profits that came with it."
-
-	    n "However, as you gaze out across the crowd you spot something which adds another feeling to the already turbulent mix of emotions"
-
+        n "You and the other managers have been given wonderful seats to view the carnage."
+        n "The crowd beneath you grows as a seemingly endless number of trucks relentlessly spew out victims who are led towards the gasping pit in the earth."
+        n "You can feel the dread oozing out from the crowd. It is matched in magnitude only by the relief you and your coworkers feel, gazing down on them from your office above."
+        n "You all had done acceptable jobs this year. The Harvest was going well. You would live to see another day, and the profits that came with it."
+        n "However, as you gaze out across the crowd you spot something which adds another feeling to the already turbulent mix of emotions"
         n "You see the man from yesterday, head in his hands, sobbing. There are children next to him. They share his features."
-
         n "The unfamiliar feeling grips your heart like a vice and twists. Is it… Guilt?"
-
         n "Your eyes continue to scan the crowd and you spot more figures which thaw your heart."
-
         n "A gaunt woman missing an arm."
-
         n "A figure with a slit throat falling into the pits."
-
         n "The gaunt face of the person slitting their throats."
-
         n "As the grim procession continues, and your reward for your hard work looms on the horizon, your guilt continues to fester."
-
         n "You begin to wonder why you are feeling this guilt now? You have marched across countless bodies to reach your current position."
-
         n "Your gaze returns to the man who you doomed and his family and realize that you aren't just guilty."
-
         n "You're jealous."
-
         n "Jealous of the love he and his family share, in spite of the terror before them."
-
         n "Dspite his uselessness to society, his children still cling to him."
-
         n "When was the last time your children reached to you for comfort? You can't remember."
-
         n "It is there, in that crowded viewing chamber surrounded by colleagues and filled with raw and weak emotions that you receive a message"
-
         ceo "I will be meeting with you at the end of the work day for a quarterly performance review."
-
         n "There was no name signed, but it could be from only one being."
-
         #new scene, office proper. Sounds of crying in the background.
-
         n "The CEO stands over you, his head a rotating steel cage of fused needles in the shape of a dodecahedron."
         n "At its center is a single massive, bloodshot eye that twitches back and forth in a blur of rotation, but never lets its foggy pupil off of you." 
         n "He is so very beautiful." #format with red and italic text
@@ -1134,9 +1091,7 @@ label start:
         n "The CEO has long since forsaken the need for a mouth, and speaks directly into your mind as the raised veins on his massive eye throb and expand."
         ceo "Your harvest this year was more than satisfactory. The great transaction continues."
         n "You can’t help but let a smile crack through your professional facade."
-
         n "The Boss must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh."
-
         ceo "You know, Anders, you might have what it takes to be an exec after all. What do you say?"
 
         menu:
