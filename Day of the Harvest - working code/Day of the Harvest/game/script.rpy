@@ -15,7 +15,9 @@ define craig = Character("Craig")
 define hm = Character("homeless man")
 define meli = Character("Melissa (Wife)")
 define ceo = Character("CEO")
-
+define me = Character("Melissa")
+define vic = Character("Victim")
+define mic = Character("Michael")
 
 
 
@@ -737,62 +739,209 @@ label start:
 
         jump the_end
 
-
+#start of Cost of Doing Business
     label business_story:
-        e " The CEO stands over you, his head a rotating steel cage of fused needles in the shape of a dodecahedron."
-        e" At its center is a single massive, bloodshot eye that twitches back and forth in a blur of rotation, but never lets its foggy pupil off of you. 
-        He is so very beautiful."
-        e "His hooked fingers reach over to you, whirring as they writhe through the air before suddenly becoming still as they find your suit. "
-        e" The CEO has long since forsaken the need for a mouth, and speaks directly into your mind as the raised veins on his massive eye throb and expand.
-        Your harvest this year was more than satisfactory. The great transaction continues."
+        #scene set in the office
+        n "A disheveled man sits in front of you. His raggedy appearance is outmatched only by the pungent smell emanating from him. The cloth you hold over your nose does little to mask it."
 
-        
-        e "You know, Anders, you might have what it takes to be an exec after all. What do you say?" (Boss)
+        vic "Please sir, my children will be without a father. Don’t send them to their deaths, the mistakes weren’t theirs!"
 
+        n "His cries for mercy fail to move you."
+
+        mic "My sincerest condolences, but the company has selected you as an eligible candidate for the Harvest. It’s out of my hands."
+
+        n "The lies leave your lips without even a thought spared for the truth. Of course you could simply select someone else."
+
+        n "But the algorithm had selected this man as a prime candidate. You aren’t about to risk rocking the boat by switching him out for someone else."
+
+        n "He has no job and no prospects. He claims to care for his family, but fails to provide for them or the society they live in."
+
+        n "You had already stayed late to hear the man’s case, for him to expect any more than that is frankly selfish."
+
+        n "With one hand still protecting your nose you tap a few keys and within moments security arrives to escort the man away."
+
+        #change of scene to home
+        n "Hours later the sun has set and you arrive home to the smell of a home cooked meal lingering in the air."
+
+        n "It would have been comforting had you arrived on time to see your family sitting down to eat it. Instead you feel a pang of guilt accompanied by your ever creeping loneliness."
+
+        n "The emotions sit within your gut heckling you as you spoon the lukewarm gruel into your inefficient meat body."
+
+        n "Maybe after the harvest you'll be able to afford some upgrades for more efficient energy storage."
+
+	    n "Melissa has heard you arrive. You sppt her descending the stairs."
+
+        me "You promised you would be home on time today.” She states coldly. “I already put the children to bed."
+
+        menu:
+            "There was an issue at Work I had to take care of. The Harvest needs my full attention right now."
+
+            jump CODB_Dialogue_1a
+
+            "I’ve told you Work is going to take more of my time until the Harvest. If the Boss recognizes my efforts we’ll all benefit"
+
+            jump CODB_Dialogue_1b
         
+    label CODB_Dialogue_1a:
+        me "Your family needs your attention! When will you make us a priority?"
+
+        menu:
+            "This is for all of our sakes. If I get promoted more I can provide for us better."
+
+            jump CODB_Dialogue_2a
+
+            "I have more on the line than just our family! The entire Harvest depends on me and my efforts."
+
+            jump CODB_Dialogue_2b
+
+    label CODB_Dialogue_1b:
+
+        me "You’ve used work being busy as an excuse for years. When will you make us a priority?"
+
+        menu:
+            "This is for all of our sakes. If I get promoted more I can provide for us better."
+
+            jump CODB_Dialogue_2a
+
+            "I have more on the line than just our family! The entire Harvest depends on me and my efforts."
+
+            jump CODB_Dialogue_2b
+
+    label CODB_Dialogue_2a:
+        me "We both know everything you do at work is just for yourself. Don’t act like you aren’t being selfish."
+
+        menu:
+            "If I put in the hours now it means more time for us as a family later!"
+
+            jump CODB_Dialogue_3a
+
+            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there."
+
+            jump CODB_Dialogue_3b
+
+    label CODB_Dialogue_2b:
+        me "Is the harvest really worth giving up everything you love? You aren’t serving anyone doing this, you’re just being selfish."
+
+        menu:
+            "If I put in the hours now it means more time for us as a family later!"
+
+            jump CODB_Dialogue_3a
+
+            "You don’t understand! I need to prove to myself I can do this! I’m doing great things out there."
+
+            jump CODB_Dialogue_3b
+
+    label CODB_Dialogue_3a:
+        me "I hope you’re right about that. It’s getting late, let's go to bed. We can talk more about this tomorrow."
+
+        jump business_story_cont
+
+
+    label CODB_Dialogue_3b:
+        me "Well then I hope your proof is worth the cost. I'm going to bed, you can sleep on the couch."
+
+    label business_story_cont:
+        #new scene, offic builsing looking out onto the harvest
+        n "The Harvest is finally here." 
+
+	    n "You and the other managers have been given wonderful seats to view the carnage."
+
+	    n "The crowd beneath you grows as a seemingly endless number of trucks relentlessly spew out victims who are led towards the gasping pit in the earth."
+
+	    n "You can feel the dread oozing out from the crowd. It is matched in magnitude only by the relief you and your coworkers feel, gazing down on them from your office above."
+
+	    n "You all had done acceptable jobs this year. The Harvest was going well. You would live to see another day, and the profits that came with it."
+
+	    n "However, as you gaze out across the crowd you spot something which adds another feeling to the already turbulent mix of emotions"
+
+        n "You see the man from yesterday, head in his hands, sobbing. There are children next to him. They share his features."
+
+        n "The unfamiliar feeling grips your heart like a vice and twists. Is it… Guilt?"
+
+        n "Your eyes continue to scan the crowd and you spot more figures which thaw your heart."
+
+        n "A gaunt woman missing an arm."
+
+        n "A figure with a slit throat falling into the pits."
+
+        n "The gaunt face of the person slitting their throats."
+
+        n "As the grim procession continues, and your reward for your hard work looms on the horizon, your guilt continues to fester."
+
+        n "You begin to wonder why you are feeling this guilt now? You have marched across countless bodies to reach your current position."
+
+        n "Your gaze returns to the man who you doomed and his family and realize that you aren't just guilty."
+
+        n "You're jealous."
+
+        n "Jealous of the love he and his family share, in spite of the terror before them."
+
+        n "Dspite his uselessness to society, his children still cling to him."
+
+        n "When was the last time your children reached to you for comfort? You can't remember."
+
+        n "It is there, in that crowded viewing chamber surrounded by colleagues and filled with raw and weak emotions that you receive a message"
+
+        ceo "I will be meeting with you at the end of the work day for a quarterly performance review."
+
+        n "There was no name signed, but it could be from only one being."
+
+        #new scene, office proper. Sounds of crying in the background.
+
+        n "The CEO stands over you, his head a rotating steel cage of fused needles in the shape of a dodecahedron."
+        n "At its center is a single massive, bloodshot eye that twitches back and forth in a blur of rotation, but never lets its foggy pupil off of you." 
+        n "He is so very beautiful." #format with red and italic text
+        n "His hooked fingers reach over to you, whirring as they writhe through the air before suddenly becoming still as they find your suit. "
+        n "The CEO has long since forsaken the need for a mouth, and speaks directly into your mind as the raised veins on his massive eye throb and expand."
+        ceo "Your harvest this year was more than satisfactory. The great transaction continues."
+        n "You can’t help but let a smile crack through your professional facade."
+
+        n "The Boss must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh."
+
+        ceo "You know, Anders, you might have what it takes to be an exec after all. What do you say?"
+
         menu:
                 "I'd be honored":
 
                     jump honored_path
                 
-                "You feel regret creep into your heart":
+                "You feel regret creep into your heart once more":
 
                     jump regret_path
 
     label honored_path:
-    #Need to adjust this for when the CEO speaks to switch to them being the one speaking.
-    e "The CEO must be pleased, for he strokes your face with the back of his massive skeletal hand, not letting his blades sink into your soft human flesh. You know, Anders, you might have what it takes to be an exec after all. What do you say? "
 
-    e "All your dicipline has paid off. All your hours of grind, all your sacrifices."
+    n "All your dicipline has paid off. All your hours of grind, all your sacrifices."
     
-    e "The saws come towards your soft flesh and you do not flinch as they open you up. The pain is excrutiating, but you have come much too far to let that stop you. "
+    n "The saws come towards your soft flesh and you do not flinch as they open you up. The pain is excrutiating, but you have come much too far to let that stop you. "
     
-    e "Piece by piece, they peel off the parts of yourself that you don't need. You are a perfect engine of profit, a being with none of the weaknesses you once had. Last is your heart."
+    n "Piece by piece, they peel off the parts of yourself that you don't need. You are a perfect engine of profit, a being with none of the weaknesses you once had. Last is your heart."
     
-    e "You weren't using it much anyway. Your bonus is going to be huge this quarter. No more sleep. No more need for dreams when your dream has finally been realized, after all."
+    n "You weren't using it much anyway. Your bonus is going to be huge this quarter. No more sleep. No more need for dreams when your dream has finally been realized, after all."
 
-    e "Your new body is so sharp. The world is so bright, moves so slowly. So much noise, so many angles you can view. Behind the veil of this world is an endless series of transactions, a perfect system where energy all moves towards those who truly deserve it."
+    n "Your new body is so sharp. The world is so bright, moves so slowly. So much noise, so many angles you can view. Behind the veil of this world is an endless series of transactions, a perfect system where energy all moves towards those who truly deserve it."
     
-    e "You are so very beautiful now. The numbers are good."
+    n "You are so very beautiful now. The numbers are good."
 
-    e "You recieved the promotion you were working for after all. So many bodies, and you should be proud! But even though you are an exec, you aren't a CEO yet - there's still worlds of profit to be made."
+    n "You recieved the promotion you were working for after all. So many bodies, and you should be proud! But even though you are an exec, you aren't a CEO yet - there's still worlds of profit to be made."
 
     jump the_end
 
 
     label regret_path: 
 
-    e "You think of the screams."
-    e "So many people harvested this year."
-    e "Of course, the surplus population must be dealt with somehow. If they aren't willing to work, why bother living?"
-    e "You think of the youngest one in that crowd, a thin boy with ripped sweatpants. Couldn't have been much more than 15. Must have been a dropout."
-    e "You think of his blood gushing from the jagged slash in his throat, of the pool of gore at the bottom of the pit as your underlings held the sacrifices down and drained them."
-    e "The sound of rumbling deep in the pit."
-    e "A great machine roared to life, refueled."
-    e "The sky blackens as the great engine of industry began to howl again, its vents greedily slurping the sacrificial blood as the dried husks are tossed into its waiting furnace."
-    e "But you let doubt into your mind."
-    e "You return to reality."
-    e "The CEO's eye is focused on you."
+    n "You think of the screams."
+    n "So many people harvested this year."
+    n "Of course, the surplus population must be dealt with somehow." 
+    n "If they aren't willing to work, why bother living?"
+    n "You think of the youngest one in that crowd, who stood next to the man you sent there. Couldn't have been much more than 15."
+    n "You think of his blood gushing from the jagged slash in his throat, of the pool of gore at the bottom of the pit as your underlings held the sacrifices down and drained them."
+    n "The sound of rumbling deep in the pit."
+    n "A great machine roared to life, refueled."
+    n "The sky blackens as the great engine of industry began to howl again, its vents greedily slurping the sacrificial blood as the dried husks are tossed into its waiting furnace."
+    n "But you let doubt into your mind."
+    n "You return to reality."
+    n "The CEO's eye is focused on you."
     menu:
             "Apologize":
 
@@ -804,9 +953,9 @@ label start:
 
     label death_path:
     
-    e "The CEO does not hesitate. You don't even have time to react before your head is in multiple pieces, your brain matter splattered across the marble floor."
-    e "A janitor is already rushing in before your body is cold. Fortunately, not a single drop of gore got on your suit - the CEO recognizes value when he sees it."
-    e "Unfortunately, you proved you didn't have what it takes."
+    n "The CEO does not hesitate. You don't even have time to react before your head is in multiple pieces, your brain matter splattered across the marble floor."
+    n "A janitor is already rushing in before your body is cold. Fortunately, not a single drop of gore got on your suit - the CEO recognizes value when he sees it."
+    n "Unfortunately, you proved you didn't have what it takes."
 
     jump the_end
 
@@ -814,18 +963,18 @@ label start:
 
     label almost_path:
 
-    e "The eye rolls away and focuses outside the window, letting the spindly body of the CEO follow shortly after in a lazy pirouette. His enormous arms cross behind him, twitching and writhing at the tips of his fingers.  "
+    n "The eye rolls away and focuses outside the window, letting the spindly body of the CEO follow shortly after in a lazy pirouette. His enormous arms cross behind him, twitching and writhing at the tips of his fingers.  "
 
-    e "That's what I like about you, Anders. You might be a low-rent waste of space, but you know never to apologize."
+    n "That's what I like about you, Anders. You might be a low-rent waste of space, but you know never to apologize."
 
-    e "His voice is a hoarse whisper, a choke from a strangled throat."
+    n "His voice is a hoarse whisper, a choke from a strangled throat."
     
-    e " Maybe if you put in some real elbow grease, you might still be an exec."
-    e " You nod, barely believing that such a show of weakness went unpunished."
-    e "Leave. I'll see you in the boardroom. tomorrow. His eye whirls back to fix you with a final, baleful stare."
-    e "And everywhere else."
+    n " Maybe if you put in some real elbow grease, you might still be an exec."
+    n " You nod, barely believing that such a show of weakness went unpunished."
+    n "Leave. I'll see you in the boardroom. tomorrow. His eye whirls back to fix you with a final, baleful stare."
+    n "And everywhere else."
 
-    e "Close, but not quite! You must purge your mind of weakness and embrace the grind if you wish to truly succeed!"
+    n "Close, but not quite! You must purge your mind of weakness and embrace the grind if you wish to truly succeed!"
 
     jump the_end
 
