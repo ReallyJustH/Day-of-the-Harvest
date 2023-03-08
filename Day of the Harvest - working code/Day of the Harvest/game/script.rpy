@@ -312,7 +312,9 @@ label start:
     # all bingo routes lead to questionaire end. Currently if ceo story is not accessible if the user has not triggered persistetnt flag. 
     # Persistent flag is triggered when the game ends and the appopriate text will play when finished. 
     label Questionaire_over:
+        hide questionaire with dissolve
         e "Your score is [score_counter]"
+
         if score_counter <= 0:
             jump waste_story
         if score_counter <= 8:
