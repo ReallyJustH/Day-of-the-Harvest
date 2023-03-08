@@ -4,7 +4,7 @@
 # name of the character.
 # The persistent variable saves as a variable in the game. Currently 
 
-define e = Character("questionaire")
+define e = Character("CEO")
 define n = Character("Narrator")
 define c = Character("Collector")
 define tc = Character("The Collectors")
@@ -59,7 +59,7 @@ label start:
     image bg darkalley = im.Scale("darkalley.jpg", 2000, 1200)
     image bg streets = im.Scale("streets.jpg", 2000, 1200)
     image bg office = im.Scale("office.jpg", 2000, 1200)
-    image bg room = im.Scale("room.jpg", 2000, 1200)
+    image bg apartment = im.Scale("apartment.jpg", 2000, 1200)
     scene bg room
     with fade
 
@@ -622,7 +622,8 @@ label start:
     label cog_story:
         scene bg office
         with fade
-        n "You are [Name], a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
+        #need to add name variable. # NEED TO ADD MAN/MISS VARIABLE TEMPORARY PLACEHOLDERS.
+        n "You are NAME, a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
         n "Four years ago, you passed college with mediocre grades and a mountain of debt, but fortunately managed to secure this job. "
         n "Since then, things have not been easy, but then again, nothing in life is supposed to be easy. "
         n "Your parents raised a hard worker… most of the time. "
@@ -638,7 +639,7 @@ label start:
         Phone "“I can’t do this anymore…”"
         n "The woman begins to sob."
 
-        phone "“I can’t do this anymore…” The woman begins to sob."
+        Phone "“I can’t do this anymore…” The woman begins to sob."
 
         menu:
             "Give her a refund.":
@@ -650,7 +651,7 @@ label start:
         if refund:
         #put text for refund True
             n "You sigh, then check behind you. No sign of the floor manager roaming between the cubicles."
-            n "“Listen, I can offer a partial refund. I’m really sorry, 50% is the best I can do.”"
+            n "“Listen, I can offer a partial refund. I’m really sorry, 50 percent is the best I can do.”"
             n "The woman’s voice is still close to crying, but you can tell that she will settle for this."
             Phone "“Thank you… thank you so-”"
             n "You hear a distant sound of metal dragging across metal and snap back into your corporate voice. "
@@ -669,7 +670,7 @@ label start:
         n "Lunch break finally comes. You sigh with relief before standing and walking with the horde of co-workers to the lunchroom."
         n "You’re standing in one of the dozens of lines in front of the company-owned vending machines when Craig, your co-worker, approaches you. "
         n "Technically, Craig is your superior, but he’s always been nice to you."
-        Craig "“Hey, [Name]! Listen, I was talking to some of the guys about Frank earlier."
+        Craig "“Hey, NAME! Listen, I was talking to some of the guys about Frank earlier."
         Craig "We thought it would be good if everyone donated a dollar or two to a fund to buy something for Frank’s widow."
         Craig "You know, something from all of us to help her out.”"
         n "Frank had collapsed in his cubicle with a heart attack last week."
@@ -678,10 +679,10 @@ label start:
         n "You wonder if you had a heart attack, would your co-workers check on you?"
         n "How long did Frank struggle for breath while nobody came to help?"
         n "Craig’s voice pulls you back to reality."
-        Craig "“[Name]? You good?”"
+        Craig "“NAME? You good?”"
         n "“Oh! Yeah, sorry. Sure, I can give a dollar.”"
         n "Craig smiles as he puts the dollar into the shoebox."
-        Craig "“Thanks, [Name]. Hey, are we still on for Friday?”"
+        Craig "“Thanks, NAME. Hey, are we still on for Friday?”"
         n "“Oh yeah, of course.”"
         n "You, Craig, and a bunch of the other clerical workers are planning on going out drinking on Friday, two days from now. "
         n "After all, morale is usually pretty low and prices drop the day after the Harvest."
@@ -699,7 +700,7 @@ label start:
         n "You swivel your chair around and try your best to smile."
         n "“H-hello, Sir!”"
         n "The Floor Manager speaks to you in a voice that could never issue from a human mouth. "
-I       n "It’s a sound that’s one part the rasp of a file on bone, one part grinding metal, and one part a distant scream –"
+        n "It’s a sound that’s one part the rasp of a file on bone, one part grinding metal, and one part a distant scream –"
         n " - all somehow forming coherent words in your mind."
 
         if refund:
@@ -766,7 +767,7 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
         with fade
         n "…"
         n "The walk from the MDAS Company’s office to the subway station is short, but even so, you see a number of grimy homeless people as you walk."
-        Waste "“Hey, [man/miss], can you spare some change?”"
+        Waste "“Hey, MAN/MISS, can you spare some change?”"
         n "You avoid making eye contact. If they don’t have money today, it’s already far too late for them. Charity handouts won’t help them."
         Waste "“Anything helps. I just want to be off the streets tomorrow, you know?”"
         n "One is following you. You speed up, trying to avoid letting him touch you."
@@ -775,7 +776,7 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
         n "The ride home is silent, but you can’t shake away the thought of the people who you know won’t have enough for tomorrow."
         n "The company would say that they made their mistakes. It’s too late now."
         n "You just hope that’s true."
-        scene bg room
+        scene bg apartment
         with fade
         n "…"
         n "You get home, kick off your shoes, drop your bag and collapse onto your couch."
@@ -815,7 +816,7 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
         n "You chase after him. Even though you don’t exactly have time to exercise, he’s clearly in no state to run. You gain on him quickly."
         scene bg darkalley
         with fade
-        Waste "“Please, [Man/Miss], I’m sorry! I can pay by the end of the week, I swear!”"
+        Waste "“Please, MAN/MISS, I’m sorry! I can pay by the end of the week, I swear!”"
         n "You get closer. You aren’t sure what he’s talking about – really, it could be any number of debts. It doesn’t matter now."
         Waste "“Listen, I—”"
         n "You tackle him to the ground, and he begins sobbing."
@@ -864,12 +865,10 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
             n "You glance across the lines and see the homeless man you spared on your way to the pit."
             n "Your mouth goes dry."
             n "There was no chance for him after all."
-
         if haveTo:
             n "The man you captured groggily shuffles past you, barely conscious as the tranquilizer wears off. You do your best not to look at him."
             n "If not you, someone would have done it."
             n "If not this year, then next year."
-
         #back to normal text
         n "Inevitably, you find yourself at the edge of the pit."
         n "Below is a dizzying fall, hundreds of feet, so far you can only barely see the bottom through the haze of the bloody smoke."
@@ -916,17 +915,10 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
         Phone "“Sincerely, the MDAS Corporation”"
         n "You let your phone fall to the ground and begin to sob."
 
-
         jump the_end
 
+    label sacrafice_block_path:    
 
-
-
-
-
-
-
-    label sacrafice_block_path:
         e "The line is red. Going down. You try to control your breathing. The only thing worse than bad numbers is being caught lying. Bad, sir."
         e "The exec screeches, a sound like knives being dragged across metal. Your ears are still ringing as he grips your shoulders and drags you away from your cubicle."
         e "Not good, not good, whelp! We need those numbers back up! You are reassigned. It's an important day."
@@ -955,8 +947,8 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
         e "You stumble back to the van. You get the rest of the day off."
 
         jump the_end
-
-
+        
+        
     label chopping_block_path:
         e "The line goes up. Green. You cough out Good! they are good. P-profit! The boss's many needle teeth clink in his vast mouth. From the upper jaw all the way down to the collar of his suit is a series of fused needles and metal thorns that tap together one after another."
         e "Tip-tap, over and over. Click-clack, so much noise. 
@@ -1108,6 +1100,7 @@ I       n "It’s a sound that’s one part the rasp of a file on bone, one part
 
         # ... the game continues here
     label the_end:
+    scene bg room with dissolve
 
     e " This is the end of the game."
 
