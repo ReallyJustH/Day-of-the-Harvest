@@ -56,7 +56,7 @@ label start:
     #character assets.
     image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
     image questionaire = im.Scale("CEO.png", 1000, 1000)
-    image cog = im.scale("cog.png",1000,1000)
+    image cog = im.Scale("cog.png",1000,1000)
     image waste = im.Scale("waste.png",1000,1000)
 
     # Show a background. This uses a placeholder by default, but you can
@@ -68,7 +68,7 @@ label start:
     image bg office = im.Scale("office.jpg", 2000, 1200)
     image bg apartment = im.Scale("apartment.jpg", 2000, 1200)
     image bg black = im.Scale("black.jpg", 2000, 1200)
-    image bg pit = im.Scale("thepitplaceholder.jpg, 2000,1200")
+    image bg pit = im.Scale("thepitplaceholder.jpg", 2000,1200)
     scene bg room
     with fade
 
@@ -419,7 +419,6 @@ label start:
         menu: 
             "Give up":
                 jump waste_giveUp
-                $
 
             "Continue on":
                 jump waste_continueOn
