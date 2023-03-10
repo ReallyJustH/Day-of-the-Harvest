@@ -53,6 +53,11 @@ return
 
 label start:
 
+    #character assets.
+    image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
+    image questionaire = im.Scale("CEO.png", 1000, 1000)
+    image cog = im.scale("cog.png",1000,1000)
+    image waste = im.Scale("waste.png",1000,1000)
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -62,6 +67,8 @@ label start:
     image bg streets = im.Scale("streets.jpg", 2000, 1200)
     image bg office = im.Scale("office.jpg", 2000, 1200)
     image bg apartment = im.Scale("apartment.jpg", 2000, 1200)
+    image bg black = im.Scale("black.jpg", 2000, 1200)
+    image bg pit = im.Scale("thepitplaceholder.jpg, 2000,1200")
     scene bg room
     with fade
 
@@ -349,6 +356,7 @@ label start:
         #Introduce alleyway asset. Add the homeless man/woman asset based on the chosen gender variable
         scene bg alleyway
         with fade
+        show neutralCharacter
 
         n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
         
@@ -408,6 +416,7 @@ label start:
         n "There wasn’t one. They were sure to beat that into your skull. Only now is it just getting through."
 
         #Adjust scene to streets asset
+        show neutralCharacter
         scene bg streets
         with fade
     
@@ -432,6 +441,7 @@ label start:
         n "After a few stretches of your tired muscles (or lack thereof), you walk out of your temporary home. No use just thinking about hope. You had to get food."
     
         #Adjust scene to streets asset
+        show neutralCharacter
         scene bg streets
         with fade
         n "The streets were just as dark as the skyscrapers and sky – nothing new. Nor were the neon signs you long since avoided glancing at. Nor were the more appealing colors of trash that litter the cracked sidewalks."
@@ -447,11 +457,15 @@ label start:
         n "One more cough of blood and you’re off."
     
         #Cut to black
+        scene bg black
+        with fade
     
         #Maybe adjust this from narrator to blank
         n "Hours later…"
     
         #Cut back to streets asset, littered with trash assets, and the main character homeless man/woman asset
+        scene bg streets 
+        with dissolve
     
         n "Nothing. Still nothing. No matter how much you scrounge for food today, the trash piles seemed to house no viable sustenance."
     
@@ -470,6 +484,7 @@ label start:
         n "…that is until you see her."
     
         #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
+        show neutralCharacter
     
         n "Another homeless and unemployed just like you. Unlike the others of today though, she stares back. You pause to look her over."
     
@@ -492,6 +507,7 @@ label start:
         n "You split the sandwich in two before handing one half to her. After nearly a minute, she reaches her remaining arm out and holds it, taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
+        hide neutralCharacter
         
         n "She walks away without a word spoken. Despite that, you smile."
         
@@ -516,6 +532,7 @@ label start:
         n "You give her a somber expression before looking away and taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
+        hide neutralCharacter
         
         n "By the time you finished eating and you looked back, she was gone."
         
@@ -577,6 +594,7 @@ label start:
         n "The Harvest."
         
         #Add several “The Cog” character assets in Harvest uniforms
+        show cog
 
         n "The collectors drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
         
@@ -588,6 +606,8 @@ label start:
         tc "The market requires blood."
         
         #Adjust scene to The Pit asset. Get rid of all but one of “The Cog” character assets in Harvest uniform
+        hide cog
+        show bg pit
 
         n "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
         
@@ -618,7 +638,7 @@ label start:
         n "Even as it slows."
         
         n "The market grows stronger."
-        hide neutralCharacter
+        
         jump the_end
 
         
@@ -875,6 +895,7 @@ label start:
             n "If not you, someone would have done it."
             n "If not this year, then next year."
         #back to normal text
+        show bg pit
         n "Inevitably, you find yourself at the edge of the pit."
         n "Below is a dizzying fall, hundreds of feet, so far you can only barely see the bottom through the haze of the bloody smoke."
         n "The enormous pit’s walls are all stained red, the shade growing deeper and darker as it descends."
