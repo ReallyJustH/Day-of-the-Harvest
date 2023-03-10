@@ -339,10 +339,42 @@ label start:
         if score_counter >= 16 and persistent.gameDone:
             jump ceo_story
 
-#Put stuff for waste story here 
+
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+############## STORY STARTS HERE FOR PATHS ADDED SO I CAN SEE IN THIS BLOCK OF WALL OF TEXT 
+
+
+
+#Waste story starts here. If there is anything that needs to be addded it will be added for clarity sake 
     label waste_story:
-        #put text here for the story until waste road choice
-        show neutralCharacter
+        n "Enter your name"
+
+        # The phrase in the brackets is the text that the game will display to prompt 
+        # the player to enter the name they've chosen.
+
+        $ player_name = renpy.input("What is your name, Worker?")
+
+        $ player_name = player_name.strip()
+        # The .strip() instruction removes any extra spaces the player 
+        # may have typed by accident.
+
+        #  If the player can't be bothered to choose a name, then we
+        #  choose a suitable one for them:
+        if player_name == "":
+            $ player_name="Joey Smalls"
+
+        show waste
+        show bg streets
         n "You are homeless."
         
         n "You have been for weeks…or was it months…years? It’s hard to tell now."
@@ -353,10 +385,10 @@ label start:
 
         
         
-        #Introduce alleyway asset. Add the homeless man/woman asset based on the chosen gender variable
+        #Introduce alleyway asset. (add option for player to choose which asset (STRETCH GOAL))
         scene bg alleyway
         with fade
-        show neutralCharacter
+        show waste
 
         n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
         
@@ -383,10 +415,11 @@ label start:
         n "Still…you can’t just give up hope. These better circumstances mean there’s something to keep going for…"
         
         n "Right?"
-
+        # add variables of give up and continue on (future implementations )
         menu: 
             "Give up":
                 jump waste_giveUp
+                $
 
             "Continue on":
                 jump waste_continueOn
@@ -416,7 +449,7 @@ label start:
         n "There wasn’t one. They were sure to beat that into your skull. Only now is it just getting through."
 
         #Adjust scene to streets asset
-        show neutralCharacter
+        show waste
         scene bg streets
         with fade
     
@@ -425,8 +458,6 @@ label start:
         n "In those brief moments, you continue to wonder…what was the point of the Harvest?"
     
         n "Those brief moments before you notice someone standing across from you on the street."
-    
-        #Add/apply giveUp variable to be used in the waste_end section
     
         jump waste_end
 
@@ -441,7 +472,7 @@ label start:
         n "After a few stretches of your tired muscles (or lack thereof), you walk out of your temporary home. No use just thinking about hope. You had to get food."
     
         #Adjust scene to streets asset
-        show neutralCharacter
+        show waste
         scene bg streets
         with fade
         n "The streets were just as dark as the skyscrapers and sky – nothing new. Nor were the neon signs you long since avoided glancing at. Nor were the more appealing colors of trash that litter the cracked sidewalks."
@@ -459,6 +490,7 @@ label start:
         #Cut to black
         scene bg black
         with fade
+        hide waste
     
         #Maybe adjust this from narrator to blank
         n "Hours later…"
@@ -466,6 +498,7 @@ label start:
         #Cut back to streets asset, littered with trash assets, and the main character homeless man/woman asset
         scene bg streets 
         with dissolve
+        show waste 
     
         n "Nothing. Still nothing. No matter how much you scrounge for food today, the trash piles seemed to house no viable sustenance."
     
@@ -484,13 +517,13 @@ label start:
         n "…that is until you see her."
     
         #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
-        show neutralCharacter
+        show waste
     
         n "Another homeless and unemployed just like you. Unlike the others of today though, she stares back. You pause to look her over."
     
         n "She’s even more gaunt than you. She’s missing an entire arm. She’s desperate, even without words."
     
-        #menu option to share the sandwich 
+        #menu option to share the sandwich ( add help others variable or don't share food value. need later. )
         n "Do you share the sandwich?"
     
         menu: 
@@ -502,12 +535,11 @@ label start:
 
     label waste_shareFood:
     
-        #Add/apply helpOthers variable
-        
+
         n "You split the sandwich in two before handing one half to her. After nearly a minute, she reaches her remaining arm out and holds it, taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
-        hide neutralCharacter
+        hide waste
         
         n "She walks away without a word spoken. Despite that, you smile."
         
@@ -532,7 +564,7 @@ label start:
         n "You give her a somber expression before looking away and taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
-        hide neutralCharacter
+        hide waste
         
         n "By the time you finished eating and you looked back, she was gone."
         
@@ -561,7 +593,7 @@ label start:
         
         n "The inner fire to rise up the ranks has been stoked substantially. He won’t stop himself."
         
-        #Need some way to include giveUp variable and corresponding text and panning across screen.
+        #Need some way to include giveUp variable and corresponding text and panning across screen. *** this is probably only a debugging feature. 
         
         n "You run."
         
@@ -627,7 +659,7 @@ label start:
 
         n "You feel the blade glide into your throat."
         
-        #Adjust screen to be red tinted, either with a slightly adjusted Pit asset, or a not fully opaque red overlay. Not sure which would be easier.
+        #Adjust screen to be red tinted, either with a slightly adjusted Pit asset, or a not fully opaque red overlay. Not sure which would be easier. ( need asset. )
         
         n "The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
         
@@ -648,7 +680,25 @@ label start:
         with fade
         #need to add name variable. # NEED TO ADD MAN/MISS VARIABLE TEMPORARY PLACEHOLDERS.
         show neutralCharacter
-        n "You are NAME, a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
+
+        n "Enter your name"
+
+        # The phrase in the brackets is the text that the game will display to prompt 
+        # the player to enter the name they've chosen.
+
+        $ player_name = renpy.input("What is your name, Worker?")
+
+        $ player_name = player_name.strip()
+        # The .strip() instruction removes any extra spaces the player 
+        # may have typed by accident.
+
+        #  If the player can't be bothered to choose a name, then we
+        #  choose a suitable one for them:
+        if player_name == "":
+            $ player_name="Joey Smalls"
+
+  
+        n "You are %(player_name)s, a clerical worker in the insurance branch of the MDAS Corporation, one of the world’s leading supercompanies."
         n "Four years ago, you passed college with mediocre grades and a mountain of debt, but fortunately managed to secure this job. "
         n "Since then, things have not been easy, but then again, nothing in life is supposed to be easy. "
         n "Your parents raised a hard worker… most of the time. "
@@ -695,7 +745,7 @@ label start:
         n "Lunch break finally comes. You sigh with relief before standing and walking with the horde of co-workers to the lunchroom."
         n "You’re standing in one of the dozens of lines in front of the company-owned vending machines when Craig, your co-worker, approaches you. "
         n "Technically, Craig is your superior, but he’s always been nice to you."
-        Craig "“Hey, NAME! Listen, I was talking to some of the guys about Frank earlier."
+        Craig "“Hey, ! Listen, I was talking to some of the guys about Frank earlier."
         Craig "We thought it would be good if everyone donated a dollar or two to a fund to buy something for Frank’s widow."
         Craig "You know, something from all of us to help her out.”"
         n "Frank had collapsed in his cubicle with a heart attack last week."
@@ -704,10 +754,10 @@ label start:
         n "You wonder if you had a heart attack, would your co-workers check on you?"
         n "How long did Frank struggle for breath while nobody came to help?"
         n "Craig’s voice pulls you back to reality."
-        Craig "“NAME? You good?”"
+        Craig "“%(player_name)? You good?”"
         n "“Oh! Yeah, sorry. Sure, I can give a dollar.”"
         n "Craig smiles as he puts the dollar into the shoebox."
-        Craig "“Thanks, NAME. Hey, are we still on for Friday?”"
+        Craig "“Thanks, %(player_name). Hey, are we still on for Friday?”"
         n "“Oh yeah, of course.”"
         n "You, Craig, and a bunch of the other clerical workers are planning on going out drinking on Friday, two days from now. "
         n "After all, morale is usually pretty low and prices drop the day after the Harvest."
