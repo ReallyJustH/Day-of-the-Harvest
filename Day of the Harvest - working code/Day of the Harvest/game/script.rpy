@@ -386,7 +386,7 @@ label start:
         
         
         #Introduce alleyway asset. (add option for player to choose which asset (STRETCH GOAL))
-        scene bg alleyway
+        scene bg darkalley
         with fade
         show waste
 
