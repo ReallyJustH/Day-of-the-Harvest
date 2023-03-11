@@ -69,6 +69,7 @@ label start:
     image bg apartment = im.Scale("apartment.jpg", 2000, 1200)
     image bg black = im.Scale("black.jpg", 2000, 1200)
     image bg pit = im.Scale("thepitplaceholder.jpg", 2000,1200)
+    image bg homesweethome = im.Scale("homesweethome.jpg",2000,1200)
     scene bg room
     with fade
 
@@ -941,7 +942,7 @@ label start:
         n "Most are crying. There’s all ages – an old man here, a mother and a filthy child there. You try desperately not to look at them until the van doors are slammed shut."
         n "As you approach the Harvest site, the sound of a distant rhythm becomes audible. It’s timed like the beat of a heart, but sounds like the deep rumble of thunder."
         n "You are told to put in your earplugs shortly before the van rolls to a stop."
-        show bg pit with dissolve
+        show bg pit
         n "Outside is a giant clearing in the endless skyscrapers. At its center is a huge, circular pit."
         n "The pit is larger than your apartment building’s footprint, and all around it are dozens of identical black vans and lines of people leading up to the edge."
         n "An enormous tower of thick and acrid black and red smoke floods out of the pit in time with the thundering pulse."
@@ -1069,6 +1070,8 @@ label start:
 #start of Cost of Doing Business
     label business_story:
         #scene set in the office
+        show bg office with dissolve
+        show waste with dissolve
         n "A disheveled man sits in front of you. His raggedy appearance is outmatched only by the pungent smell emanating from him. The cloth you hold over your nose does little to mask it."
 
         vic "Please sir, my children will be without a father. Don’t send them to their deaths, the mistakes weren’t theirs!"
@@ -1085,9 +1088,13 @@ label start:
 
         n "You had already stayed late to hear the man’s case, for him to expect any more than that is frankly selfish."
 
+        hide waste
+
         n "With one hand still protecting your nose you tap a few keys and within moments security arrives to escort the man away."
 
         #change of scene to home
+        show bg homesweethome with dissolve
+        show neutralCharacter
         n "Hours later the sun has set and you arrive home to the smell of a home cooked meal lingering in the air."
         n "It would have been comforting had you arrived on time to see your family sitting down to eat it. Instead you feel a pang of guilt accompanied by your ever creeping loneliness."
         n "The emotions sit within your gut heckling you as you spoon the lukewarm gruel into your inefficient meat body."
@@ -1149,6 +1156,8 @@ label start:
 
     label business_story_cont:
         #new scene, offic builsing looking out onto the harvest
+        hide neutralCharacter
+        show bg pit with dissolve
         n "The Harvest is finally here." 
         n "You and the other managers have been given wonderful seats to view the carnage."
         n "The crowd beneath you grows as a seemingly endless number of trucks relentlessly spew out victims who are led towards the gasping pit in the earth."
@@ -1172,6 +1181,12 @@ label start:
         ceo "I will be meeting with you at the end of the work day for a quarterly performance review."
         n "There was no name signed, but it could be from only one being."
         #new scene, office proper. Sounds of crying in the background.
+        show bg office with dissolve
+        show neutralCharacter with dissolve:
+            yalign 2.0
+        show ceo with dissolve:
+            xalign 1.8
+
         n "The CEO stands over you, his head a rotating steel cage of fused needles in the shape of a dodecahedron."
         n "At its center is a single massive, bloodshot eye that twitches back and forth in a blur of rotation, but never lets its foggy pupil off of you." 
         n "He is so very beautiful." #format with red and italic text
