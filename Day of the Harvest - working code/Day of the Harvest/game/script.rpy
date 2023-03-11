@@ -1,8 +1,8 @@
 # The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
-
-
+# name of the character.
+# The persistent variable saves as a variable in the game. Currently 
 
 define e = Character("CEO")
 define n = Character("Narrator")
@@ -26,7 +26,7 @@ define Skittles = Character("Skittles the Cat")
 
 
 
-#This are persistent variables. These variables are modified and stored even after the game is finished playing. 
+
 define persistent.gameDone = None
 
 #cog story path variables
@@ -77,11 +77,13 @@ label start:
     # directory.
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
+    image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
     image questionaire = im.Scale("CEO.png", 1000, 1000)
     show questionaire 
     $ score_counter = 0
 
-    # Questionaire starts here. 
+    # Questionaire starts here. Needs to be revamped.
+    #Questionaires are based on a point score system. Based on your total score you will be able to unlock certain storylines. 
 
     e "Before we continue, please answer the questionaire. This will help us know whether you can survive in this world."
     e "Your final score will determine where you will find yourself in society."
@@ -385,7 +387,7 @@ label start:
         
         
         #Introduce alleyway asset. (add option for player to choose which asset (STRETCH GOAL))
-        scene bg darkalley
+        scene bg alleyway
         with fade
         show waste
 
@@ -752,10 +754,10 @@ label start:
         n "You wonder if you had a heart attack, would your co-workers check on you?"
         n "How long did Frank struggle for breath while nobody came to help?"
         n "Craig’s voice pulls you back to reality."
-        Craig "“%(player_name)? You good?”"
+        Craig " %(player_name)s? You good?"
         n "“Oh! Yeah, sorry. Sure, I can give a dollar.”"
         n "Craig smiles as he puts the dollar into the shoebox."
-        Craig "“Thanks, %(player_name). Hey, are we still on for Friday?”"
+        Craig "“Thanks, %(player_name)s. Hey, are we still on for Friday?”"
         n "“Oh yeah, of course.”"
         n "You, Craig, and a bunch of the other clerical workers are planning on going out drinking on Friday, two days from now. "
         n "After all, morale is usually pretty low and prices drop the day after the Harvest."
@@ -770,6 +772,11 @@ label start:
         n "All around you, the normal muffled sounds of your co-workers on calls fall silent."
         n "The Floor Manager is here."
         e "“Zhang.”"
+        show neutralCharacter with dissolve:
+            xalign -.2
+        show ceo with dissolve:
+            xalign 1.3
+            yalign 0.5
         n "You swivel your chair around and try your best to smile."
         n "“H-hello, Sir!”"
         n "The Floor Manager speaks to you in a voice that could never issue from a human mouth. "
@@ -838,8 +845,14 @@ label start:
         n "The rest of the work day is uneventful."
         scene bg streets
         with fade
+        
         n "…"
+        show neutralCharacter with dissolve
         n "The walk from the MDAS Company’s office to the subway station is short, but even so, you see a number of grimy homeless people as you walk."
+        show neutralCharacter with dissolve:
+            xalign 0.3
+        show waste with dissolve: 
+            xalign 1.3
         Waste "“Hey, MAN/MISS, can you spare some change?”"
         n "You avoid making eye contact. If they don’t have money today, it’s already far too late for them. Charity handouts won’t help them."
         Waste "“Anything helps. I just want to be off the streets tomorrow, you know?”"
@@ -851,6 +864,7 @@ label start:
         n "You just hope that’s true."
         scene bg apartment
         with fade
+        show neutralCharacter with dissolve
         n "…"
         n "You get home, kick off your shoes, drop your bag and collapse onto your couch."
         n "Your apartment is small and unimpressive, but it’s yours. Brown carpet, off-white walls."
@@ -867,7 +881,9 @@ label start:
         n "You know what’s coming tomorrow."
         scene bg streets
         with fade
+
         n "…"
+        show neutralCharacter with dissolve
         n "The next morning, you shower, put on a dress shirt and pants, and give Skittles a few scratches before walking to the designated spot on your street."
         n "A smooth black van rolls to a stop in front of you before its door slides open. The inside is mostly empty, but a few people sit in seats along the side."
         n "They are dressed in black masks that cover their mouths and nose, sunglasses, disposable gloves, and long kitchen aprons."
@@ -887,8 +903,10 @@ label start:
         n "You are handed a syringe and rope."
         n "You grit your teeth behind your mask and climb out of the van as the homeless man runs down an alleyway."
         n "You chase after him. Even though you don’t exactly have time to exercise, he’s clearly in no state to run. You gain on him quickly."
-        scene bg darkalley
-        with fade
+        scene bg darkalley with dissolve:
+        show waste with dissolve:
+            xalign 1.3 
+            yalign 0.05
         Waste "“Please, MAN/MISS, I’m sorry! I can pay by the end of the week, I swear!”"
         n "You get closer. You aren’t sure what he’s talking about – really, it could be any number of debts. It doesn’t matter now."
         Waste "“Listen, I—”"
@@ -923,6 +941,7 @@ label start:
         n "Most are crying. There’s all ages – an old man here, a mother and a filthy child there. You try desperately not to look at them until the van doors are slammed shut."
         n "As you approach the Harvest site, the sound of a distant rhythm becomes audible. It’s timed like the beat of a heart, but sounds like the deep rumble of thunder."
         n "You are told to put in your earplugs shortly before the van rolls to a stop."
+        show bg pit with dissolve
         n "Outside is a giant clearing in the endless skyscrapers. At its center is a huge, circular pit."
         n "The pit is larger than your apartment building’s footprint, and all around it are dozens of identical black vans and lines of people leading up to the edge."
         n "An enormous tower of thick and acrid black and red smoke floods out of the pit in time with the thundering pulse."
