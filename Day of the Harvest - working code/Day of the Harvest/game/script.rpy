@@ -1,8 +1,8 @@
 # The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
-# name of the character.
-# The persistent variable saves as a variable in the game. Currently 
+
+
 
 define e = Character("CEO")
 define n = Character("Narrator")
@@ -26,7 +26,7 @@ define Skittles = Character("Skittles the Cat")
 
 
 
-
+#This are persistent variables. These variables are modified and stored even after the game is finished playing. 
 define persistent.gameDone = None
 
 #cog story path variables
