@@ -77,7 +77,6 @@ label start:
     # directory.
     # A score counter is changed by the players based on the choices they make. Based on the amount of points 
     # the player will experience differnt stories 
-    image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
     image questionaire = im.Scale("CEO.png", 1000, 1000)
     show questionaire 
     $ score_counter = 0
