@@ -95,7 +95,7 @@ label start:
         "My Happiness":
             $ score_counter += 1
 
-        "My comfort":
+        "My Comfort":
             $ score_counter -= 1
 
         "Profit":
@@ -104,7 +104,7 @@ label start:
         "Survival":
             $ score_counter += 1
     
-    e "What would you sacrafice to succeed?"
+    e "What would you sacrifice to succeed?"
     menu:
 
         "Happiness":
@@ -137,7 +137,6 @@ label start:
         "Keep walking":
             $ score_counter += 0
 
-
         "Make sure he's okay":
             $ score_counter -= 1
         
@@ -150,7 +149,7 @@ label start:
     e "Do you hate yourself?"
     menu:
 
-        "Of course i do.":
+        "Of course I do.":
             $ score_counter += 1
 
         "Who could possibly love a waste of space?":
@@ -162,7 +161,7 @@ label start:
         "There is nothing to hate. I am nobody":
             $ score_counter += 2
     
-    e "Your daughter is asking you to come play with her. You are finally home after so much time at work, all that overtime. "
+    e "Your daughter is asking you to come play with her. You are finally home after so much time at work, all that overtime."
     e "She's got a little dirt on her face, but she's beaming."
     e "Daddy, can't you come outside? You look down from your computer. Scrolling text. It's an important deal you've been working on - something that might get you a big promotion if it works. "
     e "But you haven't seen much of your daughter in weeks, you were so busy with the last big deal."
