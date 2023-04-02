@@ -92,31 +92,31 @@ label start:
     e "What matters most in this world?"
     menu:
 
-        "My Happiness":
+        "My Happiness.":
             $ score_counter += 1
 
-        "My Comfort":
+        "My Comfort.":
             $ score_counter -= 1
 
-        "Profit":
+        "Profit.":
             $ score_counter += 2
 
-        "Survival":
+        "Survival.":
             $ score_counter += 1
     
     e "What would you sacrifice to succeed?"
     menu:
 
-        "Happiness":
+        "Happiness.":
             $ score_counter 
 
-        "Comfort":
+        "Comfort.":
             $ score_counter -= 1
 
-        "My Morals":
+        "My Morals.":
             $ score_counter += 1
 
-        "Everything":
+        "Everything.":
             $ score_counter += 2
 
     
@@ -125,22 +125,22 @@ label start:
     e "She is so gentle. What do you do?"
     menu:
 
-        "Cherish the moment":
+        "Cherish the moment.":
             $ score_counter -= 1
 
-        "Get back to work":
+        "Get back to work.":
             $ score_counter += 1
 
     e "A homeless man is lying face down on the ground in front of you. He isn't moving. What do you do?"
     menu:
 
-        "Keep walking":
+        "Keep walking.":
             $ score_counter += 0
 
-        "Make sure he's okay":
+        "Make sure he's okay.":
             $ score_counter -= 1
         
-        "Put money in his cup":
+        "Put money in his cup.":
             $ score_counter -= 2
 
         "Stomp on him.":
@@ -155,10 +155,10 @@ label start:
         "Who could possibly love a waste of space?":
             $ score_counter += 1
         
-        "I am happy with myself":
+        "I am happy with myself.":
             $ score_counter -= 1
 
-        "There is nothing to hate. I am nobody":
+        "There is nothing to hate. I am nobody.":
             $ score_counter += 2
     
     e "Your daughter is asking you to come play with her. You are finally home after so much time at work, all that overtime."
@@ -177,7 +177,7 @@ label start:
     e "What is your body?"
     menu:
 
-        "A weakness":
+        "A weakness.":
             $ score_counter += 1
 
         "A part of me.":
@@ -186,19 +186,19 @@ label start:
         "A parasite that wastes my money.":
             $ score_counter += 2
 
-        "A means to an end":
+        "A means to an end.":
             $ score_counter += 1
     
     e "What is free time?"
     menu:
 
-        "A sign that I'm not doing enough":
+        "A sign that I'm not doing enough.":
             $ score_counter += 1
 
         "A moment for reflection.":
             $ score_counter -= 1
 
-        "A time to spend with loved ones":
+        "A time to spend with loved ones.":
             $ score_counter -= 2
 
     e "Your daughter is looking at you from above. 
@@ -206,8 +206,8 @@ label start:
     The machine beeps."
     e "She is crying.
     But glaring.
-    You have not spoken in years. "
-    e" She has grown into a beautiful woman.
+    You have not spoken in years."
+    e "She has grown into a beautiful woman.
     And she has grown to hate you."
     e"You were never there for her.
     Always working, always busy."
@@ -220,7 +220,7 @@ label start:
     What do you say to her?"
     menu:
 
-        "I'm sorry":
+        "I'm sorry.":
             $ score_counter -= 1
 
         "I don't say anything at all.":
@@ -231,7 +231,7 @@ label start:
     e "Your childhood toy, Bingo. Head of a soft teddy bear with a body made of a blanket. White fluff turned beige by time. Rip in the corner. Old, but you remember him now. "
     menu:
 
-        "Remember the past":
+        "Remember the past.":
             $ score_counter -= 1
             jump bingo_bad_flag
             
@@ -250,7 +250,7 @@ label start:
                     $ score_counter -= 3
                     jump bingo_verybad_flag
                 
-                "You are disgusted":
+                "You are disgusted.":
                     $ score_counter += 1 
                     jump bingo_smart_flag
     
@@ -296,7 +296,7 @@ label start:
 
 
     label bingo_smart_flag:
-            e "Perhaps you aren't as stupid as you look"
+            e "Perhaps you aren't as stupid as you look."
             jump Questionaire_over
 
     label bingo_tried_flag:
@@ -307,7 +307,7 @@ label start:
                     $ score_counter -= 5
                     jump bingo_shame_flag
                 
-                "I have it. This was a moment of weakness":
+                "I have it. This was a moment of weakness.":
                     $ score_counter += 1 
                     jump bingo_salvaged_flag
 
@@ -316,12 +316,12 @@ label start:
                     jump bingo_shame_flag
     
     label bingo_shame_flag:
-        e "That's a shame"
+        e "That's a shame."
         jump Questionaire_over
 
 
     label bingo_salvaged_flag:
-        e "It better be. For your sake"
+        e "It better be. For your sake."
         jump Questionaire_over
 
 
