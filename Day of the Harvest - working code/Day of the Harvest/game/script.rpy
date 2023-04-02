@@ -80,7 +80,8 @@ label start:
     # the player will experience differnt stories 
     image neutralCharacter = im.Scale("neutralCharacter.png",1000, 1000)
     image questionaire = im.Scale("CEO.png", 1000, 1000)
-    show questionaire 
+    show questionaire
+    with dissolve
     $ score_counter = 0
 
     # Questionaire starts here. Needs to be revamped.
@@ -387,9 +388,10 @@ label start:
         
         
         #Introduce alleyway asset. (add option for player to choose which asset (STRETCH GOAL))
-        scene bg alleyway
+        scene bg darkalley
         with fade
         show waste
+        with dissolve
 
         n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
         
