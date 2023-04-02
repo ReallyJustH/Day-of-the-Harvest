@@ -375,8 +375,11 @@ label start:
         if player_name == "":
             $ player_name="Joey Smalls"
 
+        scene black 
+        with fade
         show waste
-        show bg streets
+        with dissolve
+        
         n "You are homeless."
         
         n "You have been for weeks…or was it months…years? It’s hard to tell now."
@@ -420,10 +423,10 @@ label start:
         n "Right?"
         # add variables of give up and continue on (future implementations )
         menu: 
-            "Give up":
+            "Give up.":
                 jump waste_giveUp
 
-            "Continue on":
+            "Continue on.":
                 jump waste_continueOn
                     
     label waste_giveUp:
@@ -501,6 +504,7 @@ label start:
         scene bg streets 
         with dissolve
         show waste 
+        with dissolve
     
         n "Nothing. Still nothing. No matter how much you scrounge for food today, the trash piles seemed to house no viable sustenance."
     
@@ -582,6 +586,8 @@ label start:
 
     label waste_end:
         #default ending for all routes regarding "the waste path"
+        show cog
+        with dissolve
 
         n "A man is staring at you."
         
@@ -609,9 +615,9 @@ label start:
         
         n "You run faster. All around you, signs with WORK and EMBRACE DISCIPLINE blur together."
 
-        n "You trip over a discarded bottle. The man's hands are on you within seconds. He wraps his arm around your throat and whispers"
+        n "You trip over a discarded bottle. The man's hands are on you within seconds. He wraps his arm around your throat and whispers..."
         
-        c "I'm so sorry" 
+        c "I'm so sorry." 
         
         n "...Just before the needle plunges into your neck. You black out."
         
