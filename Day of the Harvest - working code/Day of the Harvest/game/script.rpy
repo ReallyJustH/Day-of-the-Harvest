@@ -58,6 +58,9 @@ label start:
     image questionaire = im.Scale("CEO.png", 1000, 1000)
     image cog = im.Scale("cog.png",1000,1000)
     image waste = im.Scale("waste.png",1000,1000)
+    image wasteFemDead = im.Scale("wasteFemDead.png",1000,1000)
+    image wasteFemNeutral = im.Scale("wasteFemNeutral.png",1000,1000)
+    image wasteMaleDead = im.Scale("wasteMaleDead.png",1000,1000)
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
