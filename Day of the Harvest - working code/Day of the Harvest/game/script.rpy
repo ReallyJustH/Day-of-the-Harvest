@@ -548,10 +548,10 @@ label start:
     
         #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
         show waste with dissolve:
-            xalign -.2
+            xalign -.1
         show homelessWoman with dissolve:
-            xalign 1.3
-            yalign 0.5
+            xalign 1.2
+            yalign 1.2
     
         n "Another homeless and unemployed just like you. Unlike the others of today though, she stares back. You pause to look her over."
     
@@ -561,10 +561,10 @@ label start:
         n "Do you share the sandwich?"
     
         menu: 
-                "Yes":
+                "Yes.":
                     jump waste_shareFood
 
-                "No":
+                "No.":
                     jump waste_dontShareFood
 
     label waste_shareFood:
@@ -573,13 +573,17 @@ label start:
         n "You split the sandwich in two before handing one half to her. After nearly a minute, she reaches her remaining arm out and holds it, taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
-        hide waste
+        hide homelessWoman 
+        with dissolve
         
         n "She walks away without a word spoken. Despite that, you smile."
         
         n "Because you saw her smile."
         
         n "This is hope."
+        
+        hide waste
+        with dissolve
         
         n "You lie down using the pile as support. Today was a good day."
         
@@ -598,11 +602,15 @@ label start:
         n "You give her a somber expression before looking away and taking a bite."
         
         #Adjust scene to get rid of homeless woman asset
-        hide waste
+        hide homelessWoman 
+        with dissolve
         
         n "By the time you finished eating and you looked back, she was gone."
         
         n "It’s a mistake. You know it is."
+        
+        hide waste
+        with dissolve
         
         n "You huddle your body next to the pile. You cry."
         
@@ -1346,7 +1354,7 @@ label start:
 
     e "You are everything"
 
-    e " Congratulations! You have the CEO mindset! You know what matters and hive the drive to achieve it!
+    e " Congratulations! You have the CEO mindset! You know what matters and have the drive to achieve it!
     you must be proud!"  
     
     jump the_end
