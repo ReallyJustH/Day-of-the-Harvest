@@ -1129,14 +1129,16 @@ label start:
 
         #change of scene to home
         show bg homesweethome with dissolve
-        show neutralCharacter
+        show costMaleNervous at left
         n "Hours later the sun has set and you arrive home to the smell of a home cooked meal lingering in the air."
         n "It would have been comforting had you arrived on time to see your family sitting down to eat it. Instead you feel a pang of guilt accompanied by your ever creeping loneliness."
         n "The emotions sit within your gut heckling you as you spoon the lukewarm gruel into your inefficient meat body."
         n "Maybe after the harvest you'll be able to afford some upgrades for more efficient energy storage."
         n "Melissa has heard you arrive. You sppt her descending the stairs."
+        show wife at right
 
         me "You promised you would be home on time today.” She states coldly. “I already put the children to bed."
+
 
         menu:
             "There was an issue at Work I had to take care of. The Harvest needs my full attention right now.":
@@ -1191,14 +1193,18 @@ label start:
 
     label business_story_cont:
         #new scene, offic builsing looking out onto the harvest
-        hide neutralCharacter
+        hide costMaleNervous
+        hide wife
         show bg pit with dissolve
+        show costMaleBigSmile
         n "The Harvest is finally here." 
         n "You and the other managers have been given wonderful seats to view the carnage."
         n "The crowd beneath you grows as a seemingly endless number of trucks relentlessly spew out victims who are led towards the gasping pit in the earth."
         n "You can feel the dread oozing out from the crowd. It is matched in magnitude only by the relief you and your coworkers feel, gazing down on them from your office above."
         n "You all had done acceptable jobs this year. The Harvest was going well. You would live to see another day, and the profits that came with it."
         n "However, as you gaze out across the crowd you spot something which adds another feeling to the already turbulent mix of emotions"
+        hide costMaleBigSmile
+        show costMaleSmile
         n "You see the man from yesterday, head in his hands, sobbing. There are children next to him. They share his features."
         n "The unfamiliar feeling grips your heart like a vice and twists. Is it… Guilt?"
         n "Your eyes continue to scan the crowd and you spot more figures which thaw your heart."
@@ -1208,16 +1214,21 @@ label start:
         n "As the grim procession continues, and your reward for your hard work looms on the horizon, your guilt continues to fester."
         n "You begin to wonder why you are feeling this guilt now? You have marched across countless bodies to reach your current position."
         n "Your gaze returns to the man who you doomed and his family and realize that you aren't just guilty."
+        hide costMaleSmile
+        show costMaleNervous
         n "You're jealous."
         n "Jealous of the love he and his family share, in spite of the terror before them."
         n "Dspite his uselessness to society, his children still cling to him."
         n "When was the last time your children reached to you for comfort? You can't remember."
         n "It is there, in that crowded viewing chamber surrounded by colleagues and filled with raw and weak emotions that you receive a message"
+        hide costMaleNervous
+        show ceo
         ceo "I will be meeting with you at the end of the work day for a quarterly performance review."
         n "There was no name signed, but it could be from only one being."
+        hide ceo
         #new scene, office proper. Sounds of crying in the background.
         show bg office with dissolve
-        show neutralCharacter with dissolve:
+        show costMaleNervous with dissolve:
             yalign 2.0
         show ceo with dissolve:
             xalign 1.8
@@ -1336,7 +1347,7 @@ label start:
     e "You are everything"
 
     e " Congratulations! You have the CEO mindset! You know what matters and hive the drive to achieve it!
-    ou must be proud!"  
+    you must be proud!"  
     
     jump the_end
 
