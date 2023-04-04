@@ -61,27 +61,27 @@ label start:
     image wasteFemDead = im.Scale("wasteFemDead.png",1000,1000)
     image wasteFemNeutral = im.Scale("wasteFemNeutral.png",1000,1000)
     image wasteMaleDead = im.Scale("wasteMaleDead.png",1000,1000)
-    image cogFemHarvestBloody = im.Scale("cogFemHarvestBloody",1000,1000)
-    image cogFemHarvestClean = im.Scale("cogFemHarvestClean",1000,1000)
-    image cogFemNervous = im.Scale("cogFemNervous",1000,1000)
-    image cogFemNeutral = im.Scale("cogFemNeutral",1000,1000)
-    image cogFemSmile = im.Scale("cogFemSmile",1000,1000)
-    image cogMaleHarvestBloody = im.Scale("cogMaleHarvestBloody",1000,1000)
-    image cogMaleHarvestClean = im.Scale("cogMaleHarvestClean",1000,1000)
-    image cogMaleNervous = im.Scale("cogMaleNervous",1000,1000)
-    image cogMaleSmile = im.Scale("cogMaleSmile",1000,1000)
-    image costFemBigSmile = im.Scale("costFemBigSmile",1000,1000)
-    image costFemNervous = im.Scale("costFemNervous",1000,1000)
-    image costFemNeutral = im.Scale("costFemNeutral",1000,1000)
-    image costFemSmile = im.Scale("costFemSmile",1000,1000)
-    image costMaleBigSmile = im.Scale("costMaleBigSmile",1000,1000)
-    image costMaleNervous = im.Scale("costMaleNervous",1000,1000)
-    image costMaleSmile = im.Scale("costMaleSmile",1000,1000)
-    image craigTurn = im.Scale("craigTurn",1000,1000)
-    image driver = im.Scale("driver",1000,1000)
-    image homelessWoman = im.Scale("homelessWoman",1000,1000)
-    image skittles = im.Scale("skittles",1000,1000)
-    image wife = im.Scale("wife",1000,1000)
+    image cogFemHarvestBloody = im.Scale("cogFemHarvestBloody.png",1000,1000)
+    image cogFemHarvestClean = im.Scale("cogFemHarvestClean.png",1000,1000)
+    image cogFemNervous = im.Scale("cogFemNervous.png",1000,1000)
+    image cogFemNeutral = im.Scale("cogFemNeutral.png",1000,1000)
+    image cogFemSmile = im.Scale("cogFemSmile.png",1000,1000)
+    image cogMaleHarvestBloody = im.Scale("cogMaleHarvestBloody.png",1000,1000)
+    image cogMaleHarvestClean = im.Scale("cogMaleHarvestClean.png",1000,1000)
+    image cogMaleNervous = im.Scale("cogMaleNervous.png",1000,1000)
+    image cogMaleSmile = im.Scale("cogMaleSmile.png",1000,1000)
+    image costFemBigSmile = im.Scale("costFemBigSmile.png",1000,1000)
+    image costFemNervous = im.Scale("costFemNervous.png",1000,1000)
+    image costFemNeutral = im.Scale("costFemNeutral.png",1000,1000)
+    image costFemSmile = im.Scale("costFemSmile.png",1000,1000)
+    image costMaleBigSmile = im.Scale("costMaleBigSmile.png",1000,1000)
+    image costMaleNervous = im.Scale("costMaleNervous.png",1000,1000)
+    image costMaleSmile = im.Scale("costMaleSmile.png",1000,1000)
+    image craigTurn = im.Scale("craigTurn.png",1000,1000)
+    image driver = im.Scale("driver.png",1000,1000)
+    image homelessWoman = im.Scale("homelessWoman.png",1000,1000)
+    image skittles = im.Scale("skittles.png",1000,1000)
+    image wife = im.Scale("wife.png",1000,1000)
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -547,7 +547,11 @@ label start:
         n "…that is until you see her."
     
         #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
-        show waste
+        show waste with dissolve:
+            xalign -.2
+        show homelessWoman with dissolve:
+            xalign 1.3
+            yalign 0.5
     
         n "Another homeless and unemployed just like you. Unlike the others of today though, she stares back. You pause to look her over."
     
