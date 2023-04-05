@@ -622,7 +622,7 @@ label start:
 
     label waste_end:
         #default ending for all routes regarding "the waste path"
-        show cog
+        show cogMaleHarvestClean
         with dissolve
 
         n "A man is staring at you."
