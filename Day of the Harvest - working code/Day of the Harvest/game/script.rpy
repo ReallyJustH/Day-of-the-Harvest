@@ -1243,7 +1243,7 @@ label start:
 
         n "The CEO stands over you, his head a rotating steel cage of fused needles in the shape of a dodecahedron."
         n "At its center is a single massive, bloodshot eye that twitches back and forth in a blur of rotation, but never lets its foggy pupil off of you." 
-        n "He is so very beautiful." #format with red and italic text
+        n "{i}{color=#f00}He is so very beautiful.{/i}{/color}" #format with red and italic text
         n "His hooked fingers reach over to you, whirring as they writhe through the air before suddenly becoming still as they find your suit. "
         n "The CEO has long since forsaken the need for a mouth, and speaks directly into your mind as the raised veins on his massive eye throb and expand."
         ceo "Your harvest this year was more than satisfactory. The great transaction continues."
