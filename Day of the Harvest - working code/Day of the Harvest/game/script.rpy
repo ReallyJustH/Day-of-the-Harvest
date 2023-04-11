@@ -29,6 +29,11 @@ define Skittles = Character("Skittles the Cat")
 
 define persistent.gameDone = None
 
+#waste story path variables
+default chooseMaleWaste = True
+default giveUp = False
+default helpOthers = True
+
 #cog story path variables
 default refund = False
 default system = False
@@ -473,6 +478,7 @@ label start:
                 jump waste_continueOn
                     
     label waste_giveUp:
+        $ giveUp = True
     
         n "The more you think about it, the less reason there is to keep hope."
     
@@ -511,6 +517,7 @@ label start:
 
 
     label waste_continueOn:
+        $ giveUp = False
     
         n "Right. You didn’t come this far just to give up now. To just break after all these years."
     
@@ -598,7 +605,7 @@ label start:
                     jump waste_dontShareFood
 
     label waste_shareFood:
-    
+        $ helpOthers = True
 
         n "You split the sandwich in two before handing one half to her. After nearly a minute, she reaches her remaining arm out and holds it, taking a bite."
         
@@ -629,6 +636,7 @@ label start:
         jump waste_end
 
     label waste_dontShareFood:
+        $ helpOthers = False
         
         n "As much as it pains you…as much as you hate yourself for it…as much as it continues to remind you of those higher above you…"
         
@@ -698,6 +706,9 @@ label start:
         n "...Just before the needle plunges into your neck. You black out."
         
         #Include the scene addition as is described in the google doc for this path
+        
+        scene bg black
+        with fade
 
         n "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run."
         
@@ -724,6 +735,7 @@ label start:
         #Adjust scene to The Pit asset. Get rid of all but one of “The Cog” character assets in Harvest uniform
         hide cog
         show bg pit
+        with fade
 
         n "The pit is enormous. A huge circle of concrete overlooking a deep hole, its sides stained increasingly dark shades of brown."
         
