@@ -398,11 +398,25 @@ label start:
         #  choose a suitable one for them:
         if player_name == "":
             $ player_name="Joey Smalls"
+            
+        n "Choose your preferred gender."
+        
+        menu:
+                "Male.":
+                    $ chooseMaleWaste = True
 
-        scene black 
+                "Female.":
+                    $ chooseMaleWaste = False
+        
+        scene black
         with fade
-        show waste
-        with dissolve
+        if chooseMaleWaste == True:
+            show waste
+            with dissolve
+        
+        else:
+            show wasteFemNeutral
+            with dissolve
         
         n "You are homeless."
         
@@ -417,8 +431,13 @@ label start:
         #Introduce alleyway asset. (add option for player to choose which asset (STRETCH GOAL))
         scene bg darkalley
         with fade
-        show waste
-        with dissolve
+        if chooseMaleWaste == True:
+            show waste
+            with dissolve
+        
+        else:
+            show wasteFemNeutral
+            with dissolve
 
         n "A sigh escapes your chapped and bloody lips. The black, smokey sky once again fills your eyes, nose, and lungs. That constant backdrop is part of the reason why it’s so hard to tell when days pass on."
         
@@ -478,7 +497,6 @@ label start:
         n "There wasn’t one. They were sure to beat that into your skull. Only now is it just getting through."
 
         #Adjust scene to streets asset
-        show waste
         scene bg streets
         with fade
     
@@ -501,9 +519,9 @@ label start:
         n "After a few stretches of your tired muscles (or lack thereof), you walk out of your temporary home. No use just thinking about hope. You had to get food."
     
         #Adjust scene to streets asset
-        show waste
         scene bg streets
         with fade
+        
         n "The streets were just as dark as the skyscrapers and sky – nothing new. Nor were the neon signs you long since avoided glancing at. Nor were the more appealing colors of trash that litter the cracked sidewalks."
     
         n "Once again aside from these meager surroundings, you were alone. Anyone employed surely wouldn’t risk their safety to walk or even drive. Why would they when the subways take a direct line to their designated homes and workplace?"
@@ -527,8 +545,13 @@ label start:
         #Cut back to streets asset, littered with trash assets, and the main character homeless man/woman asset
         scene bg streets 
         with dissolve
-        show waste 
-        with dissolve
+        if chooseMaleWaste == True:
+            show waste
+            with dissolve
+        
+        else:
+            show wasteFemNeutral
+            with dissolve
     
         n "Nothing. Still nothing. No matter how much you scrounge for food today, the trash piles seemed to house no viable sustenance."
     
@@ -547,8 +570,15 @@ label start:
         n "…that is until you see her."
     
         #Adjust scene by adding homeless woman asset, ideally looking different or at least with different clothes compared to the normal homeless woman asset
-        show waste with dissolve:
-            xalign -.1
+        
+        if chooseMaleWaste == True:
+            show waste with dissolve:
+                xalign -.1
+        
+        else:
+            show wasteFemNeutral with dissolve:
+                xalign -.1
+                
         show homelessWoman with dissolve:
             xalign 1.2
             yalign 1.2
@@ -582,8 +612,13 @@ label start:
         
         n "This is hope."
         
-        hide waste
-        with dissolve
+        if chooseMaleWaste == True:
+            hide waste
+            with dissolve
+        
+        else:
+            hide wasteFemNeutral
+            with dissolve
         
         n "You lie down using the pile as support. Today was a good day."
         
@@ -609,8 +644,13 @@ label start:
         
         n "It’s a mistake. You know it is."
         
-        hide waste
-        with dissolve
+        if chooseMaleWaste == True:
+            hide waste
+            with dissolve
+        
+        else:
+            hide wasteFemNeutral
+            with dissolve
         
         n "You huddle your body next to the pile. You cry."
         
