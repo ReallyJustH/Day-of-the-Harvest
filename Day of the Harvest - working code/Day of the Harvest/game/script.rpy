@@ -710,7 +710,9 @@ label start:
         scene bg black
         with fade
 
-        n "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck. Your wrists are bound behind your back, the cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run."
+        n "You come to with dozens of others in a dark space. Based on the shaking and the noise, it must be a truck." 
+        
+        n "Your wrists are bound behind your back. A cord digs into your skin. Your feet are bound too, but not enough to stop you from moving - just enough to make it so you can't run."
         
         n "The people are sobbing. Men, women, children. The few who aren't crying are either asleep or barely choking down their whimpers."
         
