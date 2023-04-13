@@ -723,7 +723,20 @@ label start:
         n "The Harvest."
         
         #Add several “The Cog” character assets in Harvest uniforms
-        show cog
+        show cogMaleHarvestClean with dissolve:
+                xalign -.1
+                yalign 1.2
+        show cogFemHarvestClean with dissolve:
+                xalign 1.1
+                yalign 1.2
+        
+        if chooseMaleWaste == True:
+            show waste
+            with dissolve
+        
+        else:
+            show wasteFemNeutral
+            with dissolve
 
         n "The collectors drag you out, grimacing behind their sunglasses as you are brought into the sound of slow, deep sputtering. An engine with no fuel. You want to appear strong."
         
@@ -735,7 +748,10 @@ label start:
         tc "The market requires blood."
         
         #Adjust scene to The Pit asset. Get rid of all but one of “The Cog” character assets in Harvest uniform
-        hide cog
+        hide cogMaleHarvestClean
+        hide cogFemHarvestClean
+        hide waste
+        hide wasteFemNeutral
         show bg pit
         with fade
 
@@ -747,7 +763,29 @@ label start:
         
         n "Sharp spikes and needles spin across its surface in lazy orbits, chains made of spindles. Each booming sputter of the engine of progress as it struggles to run sounds like the beat of a vast heart. "
         
+        show cogMaleHarvestClean with dissolve:
+                xalign -.1
+                yalign 1.2
+                
+        if chooseMaleWaste == True:
+            show waste
+            with dissolve
+        
+        else:
+            show wasteFemNeutral
+            with dissolve
+        
         n "The man marches you to the lip of the pit and kicks the back of your leg."
+        
+        if chooseMaleWaste == True:
+            show waste with dissolve:
+                xalign .1
+                yalign 2.5
+        
+        else:
+            show wasteFemNeutral with dissolve:
+                xalign .1
+                yalign 2.5
         
         n "You barely feel it as you fall to your knees. Your eyes are locked on the great engine."
         
@@ -759,7 +797,37 @@ label start:
         
         #Adjust screen to be red tinted, either with a slightly adjusted Pit asset, or a not fully opaque red overlay. Not sure which would be easier. ( need asset. )
         
+        hide waste with dissolve
+        hide wasteFemNeutral with dissolve
+        
+        hide cogMaleHarvestClean with dissolve
+        show cogMaleHarvestBloody with dissolve:
+            xalign -.1
+            yalign 1.2
+        
+        if chooseMaleWaste == True:
+            show wasteMaleDead with dissolve:
+                xalign .1
+                yalign 2.5
+        
+        else:
+            show wasteFemDead with dissolve:
+                xalign .1
+                yalign 2.5
+        
         n "The world falls quiet except for the sound of your heart beating out pulse after pulse of your blood across the wall of the pit."
+        
+        hide cogMaleHarvestBloody
+        scene black
+        with fade
+        
+        if chooseMaleWaste == True:
+            show wasteMaleDead 
+            with dissolve
+        
+        else:
+            show wasteFemDead 
+            with dissolve
         
         n "So much red, moving so quickly down the wall."
         
