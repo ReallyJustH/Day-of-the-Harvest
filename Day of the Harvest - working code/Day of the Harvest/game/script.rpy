@@ -685,7 +685,13 @@ label start:
         
         n "The inner fire to rise up the ranks has been stoked substantially. He won’t stop himself."
         
-        #Need some way to include giveUp variable and corresponding text and panning across screen. *** this is probably only a debugging feature. 
+        #Need some way to include giveUp variable and corresponding text and panning across screen. *** this is probably only a debugging feature.
+        if giveUp:
+            n "Your mind told you and is still telling you to let him take you in without a fuss."
+            
+            n "Your basic human instinct – your spirit – however, isn’t allowing it. That would need some more time to fully break."
+
+            n "Well, if you escape that is."
         
         n "You run."
         
@@ -718,6 +724,11 @@ label start:
         
         #Including text from the helpOthers variable as put in a comment before
         
+        if helpOthers:
+            n "You can’t tell given how dark it is, but you hope to god the woman you helped wasn’t in there with you."
+
+            n "At that moment, you quickly resolve to yourself not to look at the others as you walk out. You had to keep that last bit of hope alive."
+
         n "You all know exactly what's coming."
 
         n "The Harvest."
